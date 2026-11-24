@@ -33,7 +33,7 @@ def calculate_risk_score(port: int, criticality: int, active_kev_count: int) -> 
     if active_kev_count > 0 and port in {80, 443, 9200}:
         base_likelihood = min(5, base_likelihood + 1)
 
-    raw_score = base_likelihood * criticality  # Scale: 1 to 25
+    raw_score = base_likelihood * criticality
     if raw_score >= 20:
         return (raw_score, "CRITICAL", "24 Hours")
     elif raw_score >= 12:

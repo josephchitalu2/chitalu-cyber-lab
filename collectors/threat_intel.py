@@ -7,27 +7,27 @@ import sys
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from core.database import init_db
 
-FEODO_IP_URL = "https://abuse.ch"
+SPAMHAUS_DROP_URL = "https://spamhaus.org"
 CISA_KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 
-def fetch_feodo_ips(conn) -> int:
-    req = urllib.request.Request(FEODO_IP_URL, headers={"User-Agent": "Mozilla/5.0 (ChitaluCyberLab)"})
+def fetch_spamhaus_drop(conn) -> int:
+    req = urllib.request.Request(SPAMHAUS_DROP_URL, headers={"User-Agent": "Mozilla/5.0 (ChitaluCyberLab)"})
     now = datetime.now(timezone.utc).isoformat()
     added = 0
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             for raw_line in resp.read().decode("utf-8", errors="ignore").splitlines():
-                line = raw_line.strip()
-                if not line or line.startswith("#") or "<" in line:
+                line = raw_line.split(";")[0].strip()
+                if not line or "<" in line:
                     continue
                 cur = conn.execute(
                     "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
-                    (line, "abuse.ch-feodo", "botnet-c2-ip", now)
+                    (line, "spamhaus-drop", "malicious-netblock", now)
                 )
                 added += cur.rowcount
         conn.commit()
     except Exception as e:
-        print(f"[!] Warning: Feodo feed fetch failed ({e})")
+        print(f"[!] Warning: Spamhaus DROP fetch failed ({e})")
     return added
 
 def fetch_cisa_kev(conn) -> int:
@@ -62,8 +62,8 @@ def export_ioc_snapshot(conn) -> None:
 
 if __name__ == "__main__":
     conn = init_db()
-    new_ips = fetch_feodo_ips(conn)
+    new_ips = fetch_spamhaus_drop(conn)
     new_cves = fetch_cisa_kev(conn)
     export_ioc_snapshot(conn)
     total = conn.execute("SELECT COUNT(*) FROM threat_iocs").fetchone()[0]
-    print(f"[+] Synced feeds: +{new_ips} Feodo C2 IPs, +{new_cves} CISA KEVs (Total tracked: {total})")
+    print(f"[+] Synced feeds: +{new_ips} Spamhaus DROP netblocks, +{new_cves} CISA KEVs (Total tracked: {total})")
