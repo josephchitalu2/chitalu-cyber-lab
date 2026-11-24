@@ -25,3 +25,10 @@ python3 main.py web-audit http://127.0.0.1:8000
 python3 main.py risk-report
 python3 main.py ship-elk
 ```
+
+## Cloud Security Posture Management (CSPM)
+- **IAM & IaC Auditor (`cspm/iac_auditor.py`, `cspm/iam_analyzer.py`)**: Audits AWS IAM JSON policies, Terraform (`.tf`), and Dockerfiles against CIS AWS/Docker benchmarks.
+
+```bash
+python3 main.py cloud-audit cspm/lab_targets
+```

@@ -1,0 +1,5 @@
+FROM python:latest
+WORKDIR /app
+COPY . .
+ENV AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+CMD ["python3", "main.py"]

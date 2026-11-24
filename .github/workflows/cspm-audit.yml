@@ -1,0 +1,24 @@
+name: CSPM & IaC Posture Audit
+
+on:
+  push:
+    paths:
+      - "cspm/**"
+      - "**.tf"
+      - "**/Dockerfile*"
+  workflow_dispatch:
+
+jobs:
+  audit-cloud-iac:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run CSPM & IAM Posture Audit
+        run: python3 main.py cloud-audit cspm/lab_targets
