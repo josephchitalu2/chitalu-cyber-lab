@@ -8,7 +8,7 @@ updates:
       - "dependencies"
       - "auto-maintenance"
 
-  - package-ecosystem: "docker"
+  - package-ecosystem: "docker-compose"
     directory: "/soc_elk"
     schedule:
       interval: "weekly"
@@ -16,7 +16,7 @@ updates:
       - "docker"
       - "auto-maintenance"
 
-  - package-ecosystem: "docker"
+  - package-ecosystem: "docker-compose"
     directory: "/cspm"
     schedule:
       interval: "weekly"
