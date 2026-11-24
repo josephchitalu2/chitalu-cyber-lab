@@ -1,0 +1,7 @@
+id: exposed-dotenv-file
+info:
+  name: Exposed .env Environment File
+  severity: critical
+request:
+  path: /.env
+  match: "APP_KEY="

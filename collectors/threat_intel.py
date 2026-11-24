@@ -8,10 +8,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from core.database import init_db
 
 FEODO_IP_URL = "https://abuse.ch"
-CISA_KEV_URLS = [
-    "https://githubusercontent.com",
-    "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-]
+CISA_KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 
 def fetch_feodo_ips(conn) -> int:
     req = urllib.request.Request(FEODO_IP_URL, headers={"User-Agent": "Mozilla/5.0 (ChitaluCyberLab)"})
@@ -21,7 +18,7 @@ def fetch_feodo_ips(conn) -> int:
         with urllib.request.urlopen(req, timeout=15) as resp:
             for raw_line in resp.read().decode("utf-8", errors="ignore").splitlines():
                 line = raw_line.strip()
-                if not line or line.startswith("#"):
+                if not line or line.startswith("#") or "<" in line:
                     continue
                 cur = conn.execute(
                     "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
@@ -36,24 +33,22 @@ def fetch_feodo_ips(conn) -> int:
 def fetch_cisa_kev(conn) -> int:
     now = datetime.now(timezone.utc).isoformat()
     added = 0
-    for url in CISA_KEV_URLS:
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (ChitaluCyberLab)", "Accept": "application/json"})
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                payload = json.loads(resp.read().decode("utf-8"))
-                for vuln in payload.get("vulnerabilities", [])[:50]:
-                    cve = vuln.get("cveID")
-                    vendor = vuln.get("vendorProject", "Unknown")
-                    if cve:
-                        cur = conn.execute(
-                            "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
-                            (cve, "cisa-kev", f"kev:{vendor}", now)
-                        )
-                        added += cur.rowcount
-                conn.commit()
-                return added
-        except Exception as e:
-            print(f"[!] Mirror failed ({url}): {e}")
+    try:
+        req = urllib.request.Request(CISA_KEV_URL, headers={"User-Agent": "Mozilla/5.0 (ChitaluCyberLab)", "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+            for vuln in payload.get("vulnerabilities", [])[:50]:
+                cve = vuln.get("cveID")
+                vendor = vuln.get("vendorProject", "Unknown")
+                if cve:
+                    cur = conn.execute(
+                        "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
+                        (cve, "cisa-kev", f"kev:{vendor}", now)
+                    )
+                    added += cur.rowcount
+        conn.commit()
+    except Exception as e:
+        print(f"[!] Warning: CISA KEV fetch failed ({e})")
     return added
 
 def export_ioc_snapshot(conn) -> None:
@@ -70,5 +65,5 @@ if __name__ == "__main__":
     new_ips = fetch_feodo_ips(conn)
     new_cves = fetch_cisa_kev(conn)
     export_ioc_snapshot(conn)
-    total = conn.execute("SELECT COUNT(*) FROM threat_iocs").fetchone()
+    total = conn.execute("SELECT COUNT(*) FROM threat_iocs").fetchone()[0]
     print(f"[+] Synced feeds: +{new_ips} Feodo C2 IPs, +{new_cves} CISA KEVs (Total tracked: {total})")

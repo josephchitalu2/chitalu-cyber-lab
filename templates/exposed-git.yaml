@@ -1,0 +1,7 @@
+id: exposed-git-config
+info:
+  name: Exposed .git/config Directory
+  severity: high
+request:
+  path: /.git/config
+  match: "[core]"
