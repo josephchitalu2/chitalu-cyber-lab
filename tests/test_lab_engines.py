@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 from risk.scorer import calculate_risk_score
 from cspm.iam_analyzer import audit_iam_policy
-from cspm.iac_auditor import audit_terraform, audit_dockerfile
+from cspm.iac_auditor import audit_terraform, audit_dockerfile, run_cspm_audit
 
 class TestSecurityEngines(unittest.TestCase):
     def test_risk_scoring_critical_threshold(self):
@@ -19,6 +19,10 @@ class TestSecurityEngines(unittest.TestCase):
         self.assertGreaterEqual(len(iam_findings), 2)
         self.assertGreaterEqual(len(tf_findings), 3)
         self.assertGreaterEqual(len(docker_findings), 3)
+
+    def test_cspm_hardened_targets_zero_findings(self):
+        findings_count = run_cspm_audit("cspm/hardened_targets")
+        self.assertEqual(findings_count, 0)
 
 if __name__ == "__main__":
     unittest.main()

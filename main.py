@@ -7,6 +7,7 @@ from risk.scorer import generate_risk_register
 from soc_elk.ecs_shipper import ship_to_logstash
 from cspm.iac_auditor import run_cspm_audit
 from cspm.localstack_probe import audit_live_aws
+from cspm.auto_remediate import remediate_live_aws
 from crypto_audit.tls_auditor import audit_tls_endpoint
 
 USAGE = """Chitalu Cyber Lab - Unified Security Engineering & Posture Platform
@@ -20,6 +21,7 @@ Usage:
   python3 main.py ship-elk             Export & ship ECS JSON telemetry to ELK Stack (Logstash)
   python3 main.py cloud-audit [dir]    Audit Terraform (.tf), IAM (.json) & Dockerfiles for CIS flaws
   python3 main.py aws-live-audit       Audit live AWS / LocalStack S3, IAM & EC2 APIs via boto3
+  python3 main.py aws-remediate        Auto-remediate public S3 buckets & open 0.0.0.0/0 security groups
 """
 
 if __name__ == "__main__":
@@ -27,9 +29,9 @@ if __name__ == "__main__":
         print(USAGE)
         sys.exit(1)
 
-    cmd = sys.argv[1]
+    cmd = sys.argv
     if cmd == "scan":
-        run_monitor(sys.argv[2] if len(sys.argv) > 2 else "127.0.0.1")
+        run_monitor(sys.argv if len(sys.argv) > 2 else "127.0.0.1")
     elif cmd == "sync-intel":
         conn = init_db()
         ips = fetch_spamhaus_drop(conn)
@@ -37,18 +39,20 @@ if __name__ == "__main__":
         export_ioc_snapshot(conn)
         print(f"[+] Threat Intel Updated: +{ips} Spamhaus DROP netblocks, +{cves} CVEs")
     elif cmd == "correlate":
-        correlate_logs(sys.argv[2] if len(sys.argv) > 2 else "/var/log/auth.log")
+        correlate_logs(sys.argv if len(sys.argv) > 2 else "/var/log/auth.log")
     elif cmd == "web-audit":
-        run_templates(sys.argv[2] if len(sys.argv) > 2 else "http://127.0.0.1:8000")
+        run_templates(sys.argv if len(sys.argv) > 2 else "http://127.0.0.1:8000")
     elif cmd == "tls-audit":
-        audit_tls_endpoint(sys.argv[2] if len(sys.argv) > 2 else "example.com")
+        audit_tls_endpoint(sys.argv if len(sys.argv) > 2 else "example.com")
     elif cmd == "risk-report":
         generate_risk_register()
     elif cmd == "ship-elk":
         ship_to_logstash()
     elif cmd == "cloud-audit":
-        run_cspm_audit(sys.argv[2] if len(sys.argv) > 2 else "cspm/lab_targets")
+        run_cspm_audit(sys.argv if len(sys.argv) > 2 else "cspm/lab_targets")
     elif cmd == "aws-live-audit":
         audit_live_aws()
+    elif cmd == "aws-remediate":
+        remediate_live_aws()
     else:
         print(USAGE)
