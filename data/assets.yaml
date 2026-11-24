@@ -1,0 +1,12 @@
+# Chitalu Cyber Lab - Asset Criticality Inventory
+127.0.0.1:
+  name: local-soc-node
+  environment: production
+  criticality: 5
+  owner: SecOps-Team
+
+localhost:
+  name: dev-sandbox
+  environment: staging
+  criticality: 2
+  owner: Engineering
