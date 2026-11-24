@@ -1,0 +1,58 @@
+name: Release
+
+# Fires when you publish a GitHub Release (scripts/ship.sh does that for you).
+# workflow_dispatch redeploys an older tag, which is how rollback works.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Release tag to deploy (rollback)
+        required: true
+
+# Never two deployments at once, and never cancel one half-way through.
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.event.release.tag_name }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+      - name: Checks must pass again on the exact code being released
+        run: ./scripts/check.sh
+
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    # Protected environment: add yourself as a required reviewer in
+    # Settings > Environments > production if you want a second confirmation.
+    environment:
+      name: production
+      url: ${{ vars.PRODUCTION_URL }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.event.release.tag_name }}
+      - name: Deploy
+        run: ./scripts/deploy.sh
+        env:
+          # Store these as secrets on the *production* environment, not the repo.
+          DEPLOY_TARGET: ${{ vars.DEPLOY_TARGET }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PAPINO_D1_ID: ${{ vars.PAPINO_D1_ID }}
+          PAPINO_R2_BUCKET: ${{ vars.PAPINO_R2_BUCKET }}
+      - name: Smoke test
+        if: vars.PRODUCTION_URL != ''
+        run: ./scripts/smoke.sh "${{ vars.PRODUCTION_URL }}"

@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Chitalu Software Solutions - design tokens
+   One source of truth. Components use the semantic tokens (--cs-text, --cs-brand)
+   and never a raw hex. Every text/background pair below is checked >= WCAG AA
+   (see STANDARDS.md). Brand colours come straight from the logo.
+   ========================================================================== */
+
+:root {
+  /* ---- raw palette (reference only; do not use directly in components) ---- */
+  --cs-blue-600: #0050FF;
+  --cs-blue-700: #0040CC;
+  --cs-blue-300: #7FA6FF;
+  --cs-blue-50: #EAF0FF;
+  --cs-ink-900: #02162E;
+  --cs-navy-800: #0A1A33;
+  --cs-navy-700: #12284A;
+  --cs-slate-600: #4A5876;
+  --cs-slate-300: #A9B8D6;
+  --cs-line-200: #D7DFEE;
+  --cs-line-dark: #24406B;
+  --cs-paper-50: #F6F8FC;
+  --cs-white: #FFFFFF;
+  --cs-amber-400: #FFB020;
+  --cs-green-700: #0B7A4B;
+  --cs-green-300: #5BD69B;
+  --cs-red-700: #B42318;
+  --cs-red-300: #FF8A7A;
+  --cs-gold-800: #8A5A00;
+
+  /* ---- semantic colour: light ---- */
+  --cs-bg: #F6F8FC;
+  --cs-surface: #FFFFFF;
+  --cs-surface-raised: #FFFFFF;
+  --cs-text: #02162E;
+  --cs-text-muted: #4A5876;
+  --cs-border: #D7DFEE;
+  --cs-brand: #0050FF;
+  --cs-brand-hover: #0040CC;
+  --cs-on-brand: #FFFFFF;
+  --cs-brand-tint: #EAF0FF;
+  --cs-link: #0050FF;
+  --cs-focus: #0050FF;
+  --cs-signal: #02162E;
+  --cs-success: #0B7A4B;
+  --cs-warning: #8A5A00;
+  --cs-danger: #B42318;
+  color-scheme: light;
+
+  /* ---- type ---- */
+  --cs-font-display: "Sora", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --cs-font-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --cs-font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --cs-text-xs: 0.8125rem;
+  --cs-text-sm: 0.875rem;
+  --cs-text-base: 1rem;
+  --cs-text-lg: 1.125rem;
+  --cs-text-xl: 1.25rem;
+  --cs-text-2xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
+  --cs-text-3xl: clamp(1.875rem, 1.5rem + 1.6vw, 2.5rem);
+  --cs-text-4xl: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+  --cs-leading-body: 1.6;
+  --cs-leading-heading: 1.12;
+  --cs-measure: 66ch;
+
+  /* ---- space (4px base) ---- */
+  --cs-space-1: 0.25rem;  --cs-space-2: 0.5rem;   --cs-space-3: 0.75rem;
+  --cs-space-4: 1rem;     --cs-space-6: 1.5rem;   --cs-space-8: 2rem;
+  --cs-space-12: 3rem;    --cs-space-16: 4rem;    --cs-space-24: 6rem;
+
+  /* ---- shape: controls < cards < sheets, never one radius for everything ---- */
+  --cs-radius-sm: 6px;
+  --cs-radius-md: 10px;
+  --cs-radius-lg: 16px;
+  --cs-radius-full: 999px;
+  --cs-shadow-1: 0 1px 2px rgb(2 22 46 / 0.08);
+  --cs-shadow-2: 0 6px 20px rgb(2 22 46 / 0.10);
+
+  /* ---- motion ---- */
+  --cs-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --cs-dur-fast: 120ms;
+  --cs-dur-base: 200ms;
+  --cs-dur-slow: 360ms;
+}
+
+/* ---- semantic colour: dark (follows the device unless data-theme is set) ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cs-bg: #0A1A33;
+    --cs-surface: #12284A;
+    --cs-surface-raised: #12284A;
+    --cs-text: #F6F8FC;
+    --cs-text-muted: #A9B8D6;
+    --cs-border: #24406B;
+    --cs-brand: #0050FF;
+    --cs-brand-hover: #0040CC;
+    --cs-on-brand: #FFFFFF;
+    --cs-brand-tint: #12284A;
+    --cs-link: #7FA6FF;
+    --cs-focus: #7FA6FF;
+    --cs-signal: #FFB020;
+    --cs-success: #5BD69B;
+    --cs-warning: #FFB020;
+    --cs-danger: #FF8A7A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --cs-bg: #0A1A33;
+  --cs-surface: #12284A;
+  --cs-surface-raised: #12284A;
+  --cs-text: #F6F8FC;
+  --cs-text-muted: #A9B8D6;
+  --cs-border: #24406B;
+  --cs-brand: #0050FF;
+  --cs-brand-hover: #0040CC;
+  --cs-on-brand: #FFFFFF;
+  --cs-brand-tint: #12284A;
+  --cs-link: #7FA6FF;
+  --cs-focus: #7FA6FF;
+  --cs-signal: #FFB020;
+  --cs-success: #5BD69B;
+  --cs-warning: #FFB020;
+  --cs-danger: #FF8A7A;
+  color-scheme: dark;
+}
+
+/* ---- base behaviours every Chitalu build keeps ---- */
+:focus-visible {
+  outline: 3px solid var(--cs-focus);
+  outline-offset: 2px;
+  border-radius: var(--cs-radius-sm);
+}
+
+/* The signature: the prompt from the logo, waiting. Use once per page, where
+   the visitor's next step is. Static when the visitor prefers reduced motion. */
+.cs-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.14em;
+  margin-left: 0.25em;
+  background: currentColor;
+  vertical-align: baseline;
+  animation: cs-blink 1.1s steps(1) infinite;
+}
+@keyframes cs-blink { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --cs-dur-fast: 0ms; --cs-dur-base: 0ms; --cs-dur-slow: 0ms; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cs-cursor::after { animation: none; opacity: 1; }
+}

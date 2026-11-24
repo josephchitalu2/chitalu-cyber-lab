@@ -1,0 +1,5 @@
+# Every change is reviewed by the owner. Security-sensitive paths are listed
+# explicitly so they are never merged without a deliberate look.
+*                       @josephchitalu2
+/.github/               @josephchitalu2
+/scripts/               @josephchitalu2
