@@ -1,0 +1,27 @@
+import sys
+from collectors.net_monitor import run_monitor
+from collectors.threat_intel import init_db, fetch_feodo_ips, fetch_cisa_kev, export_ioc_snapshot
+
+USAGE = """Chitalu Cyber Lab - Attack Surface & Threat Intel Engine
+Usage:
+  python3 main.py scan <host>       Run stateful port scan & flag baseline drift
+  python3 main.py sync-intel        Pull latest Abuse.ch Feodo IPs & CISA KEV feeds
+"""
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print(USAGE)
+        sys.exit(1)
+
+    cmd = sys.argv[1]
+    if cmd == "scan":
+        target = sys.argv[2] if len(sys.argv) > 2 else "127.0.0.1"
+        run_monitor(target)
+    elif cmd == "sync-intel":
+        conn = init_db()
+        ips = fetch_feodo_ips(conn)
+        cves = fetch_cisa_kev(conn)
+        export_ioc_snapshot(conn)
+        print(f"[+] Threat Intel Updated: +{ips} IPs, +{cves} CVEs")
+    else:
+        print(USAGE)

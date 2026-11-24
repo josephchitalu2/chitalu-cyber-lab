@@ -1,15 +1,18 @@
 # Chitalu Cyber Lab
 
-A modular collection of defensive security utilities, network reconnaissance scripts, and lab tooling built in Python.
+An automated attack-surface drift monitor and threat intelligence aggregator built in Python.
 
-## Structure
-- **`recon/`**: Network discovery and service banner enumeration (`port_banner_scanner.py`).
-- **`log-analysis/`**: Blue-team log parsing and anomaly detection (`ssh_bruteforce_detector.py`).
-- **`crypto-audit/`**: SSL/TLS certificate inspection and configuration auditing (`tls_cert_inspector.py`).
+## Architecture
+- **`core/database.py`**: SQLite state engine tracking port baselines, service banners, and historical drift.
+- **`collectors/net_monitor.py`**: Multi-threaded port & banner scanner that alerts on newly exposed ports or banner changes.
+- **`collectors/threat_intel.py`**: Live feed collector ingesting **Abuse.ch Feodo Tracker** C2 IPs and **CISA KEV** vulnerabilities.
+- **`.github/workflows/sync-threat-intel.yml`**: Automated CI pipeline syncing threat feeds every 12 hours.
 
-## Usage
+## Quick Start
 ```bash
-python3 recon/port_banner_scanner.py 127.0.0.1
-python3 log-analysis/ssh_bruteforce_detector.py /var/log/auth.log
-python3 crypto-audit/tls_cert_inspector.py example.com
+# Sync live threat intelligence feeds
+python3 main.py sync-intel
+
+# Run a stateful baseline scan (run twice to see drift detection in action)
+python3 main.py scan 127.0.0.1
 ```
