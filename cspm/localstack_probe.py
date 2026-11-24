@@ -13,7 +13,7 @@ def _persist_live_finding(conn, resource_arn: str, severity: str, benchmark: str
 
 def audit_live_aws(endpoint_url: str = LOCALSTACK_ENDPOINT) -> None:
     try:
-        urllib.request.urlopen(f"{endpoint_url}/_localstack/health", timeout=2.5)
+        urllib.request.urlopen(endpoint_url, timeout=2.5)
     except Exception:
         print(f"[-] LocalStack / AWS endpoint unreachable at {endpoint_url}.")
         print("[*] Start local AWS emulation with: docker compose -f cspm/docker-compose.localstack.yml up -d")

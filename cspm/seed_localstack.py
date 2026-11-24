@@ -6,7 +6,7 @@ LOCALSTACK_ENDPOINT = os.getenv("AWS_ENDPOINT_URL", "http://127.0.0.1:4566")
 
 def seed_vulnerable_resources(endpoint_url: str = LOCALSTACK_ENDPOINT) -> None:
     try:
-        urllib.request.urlopen(f"{endpoint_url}/_localstack/health", timeout=2.5)
+        urllib.request.urlopen(endpoint_url, timeout=2.5)
     except Exception:
         print(f"[-] LocalStack not running at {endpoint_url}. Start it with:")
         print("    docker compose -f cspm/docker-compose.localstack.yml up -d")

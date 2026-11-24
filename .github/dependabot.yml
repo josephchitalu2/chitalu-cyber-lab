@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "auto-maintenance"
+
+  - package-ecosystem: "docker"
+    directory: "/soc_elk"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "docker"
+      - "auto-maintenance"
+
+  - package-ecosystem: "docker"
+    directory: "/cspm"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "docker"
+      - "auto-maintenance"
