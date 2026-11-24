@@ -1,0 +1,68 @@
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 23:47 UTC)
+CVE-2026-132224	cisa-kev	kev:Optimizely
+CVE-2026-131914	cisa-kev	kev:Idunno
+CVE-2026-132165	cisa-kev	kev:Drupal
+CVE-2026-133968	cisa-kev	kev:Project MONAI
+CVE-2026-134624	cisa-kev	kev:N-able
+CVE-2026-129448	cisa-kev	kev:Apache
+CVE-2026-123890	cisa-kev	kev:Broadcom
+CVE-2025-42884	cisa-kev	kev:SAP
+CVE-2026-76466	cisa-kev	kev:Cisco
+CVE-2024-10441	cisa-kev	kev:Synology
+CVE-2026-40217	cisa-kev	kev:BerriAI
+CVE-2026-90817	cisa-kev	kev:Vanderbilt University
+CVE-2026-90436	cisa-kev	kev:Apache
+CVE-2026-115731	cisa-kev	kev:Perforce
+CVE-2026-114713	cisa-kev	kev:UnrealIRCd
+CVE-2026-123039	cisa-kev	kev:Check Point
+CVE-2026-124194	cisa-kev	kev:Microsoft
+CVE-2026-111793	cisa-kev	kev:Openwave Messaging Limited
+CVE-2026-20320	cisa-kev	kev:Cisco
+CVE-2026-111560	cisa-kev	kev:Barracuda Networks
+CVE-2026-116606	cisa-kev	kev:Barracuda Networks
+CVE-2026-125350	cisa-kev	kev:Google
+CVE-2026-102895	cisa-kev	kev:GPUStack
+CVE-2026-123158	cisa-kev	kev:OpenBSD
+CVE-2026-116779	cisa-kev	kev:SignalWire
+CVE-2026-123218	cisa-kev	kev:IBM
+CVE-2026-19868	cisa-kev	kev:SonicWall
+CVE-2024-27834	cisa-kev	kev:Apple
+CVE-2026-119977	cisa-kev	kev:WordPress
+CVE-2026-118527	cisa-kev	kev:Ivanti
+CVE-2026-111357	cisa-kev	kev:Ivanti
+CVE-2026-97229	cisa-kev	kev:GitLab
+CVE-2026-76418	cisa-kev	kev:Cisco
+CVE-2026-41709	cisa-kev	kev:Broadcom
+CVE-2026-46300	cisa-kev	kev:Linux
+CVE-2026-48356	cisa-kev	kev:Adobe
+CVE-2026-111497	cisa-kev	kev:Google
+CVE-2026-109618	cisa-kev	kev:PHP Group
+CVE-2026-109619	cisa-kev	kev:PHP Group
+CVE-2026-114625	cisa-kev	kev:Arista
+CVE-2026-110447	cisa-kev	kev:Collabora
+CVE-2026-106931	cisa-kev	kev:EG Secure Solutions
+CVE-2026-96656	cisa-kev	kev:Plex
+CVE-2026-96655	cisa-kev	kev:Plex
+CVE-2026-96654	cisa-kev	kev:Plex
+CVE-2026-96652	cisa-kev	kev:Plex
+CVE-2026-110936	cisa-kev	kev:Siemens
+CVE-2026-102764	cisa-kev	kev:BeyondTrust
+CVE-2025-61624	cisa-kev	kev:Fortinet
+CVE-2026-21589	cisa-kev	kev:Atlassian
+/*!	spamhaus-drop	malicious-netblock
+*   _____       _             __                 _____                               ______ _       _   _	spamhaus-drop	malicious-netblock
+*  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)	spamhaus-drop	malicious-netblock
+*    | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___    | |  ___ ___  _ __  ___   ______  | |__  | | __ _| |_ _  ___ ___  _ __	spamhaus-drop	malicious-netblock
+*    | | | '_ \| __/ _ \ '__|  _/ _` |/ __/ _ \   | | / __/ _ \| '_ \/ __| |______| |  __| | |/ _` | __| |/ __/ _ \| '_ \	spamhaus-drop	malicious-netblock
+*   _| |_| | | | ||  __/ |  | || (_| | (_|  __/  _| || (_| (_) | | | \__ \          | |    | | (_| | |_| | (_| (_) | | | |	spamhaus-drop	malicious-netblock
+*  |_____|_| |_|\__\___|_|  |_| \__,_|\___\___| |_____\___\___/|_| |_|___/          |_|    |_|\__,_|\__|_|\___\___/|_| |_|	spamhaus-drop	malicious-netblock
+*	spamhaus-drop	malicious-netblock
+*                         UIcons 2.4.2 - https://www.flaticon.com/uicons/interface-icons	spamhaus-drop	malicious-netblock
+*/	spamhaus-drop	malicious-netblock
+/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb	spamhaus-drop	malicious-netblock
+.ais-RatingMenu-label,.ais-RatingMenu-item--disabled .ais-RatingMenu-count{color:#c4c8d8}.ais-RatingMenu-item--selected{font-weight:700}.ais-RatingMenu-link{line-height:1.5}.ais-RatingMenu-link>*+*{margin-left:.3rem}.ais-RatingMenu-starIcon{fill:#ffc168	spamhaus-drop	malicious-netblock
+new Date().getTime(),event:'gtm.js'})	spamhaus-drop	malicious-netblock
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:''	spamhaus-drop	malicious-netblock
+'https://www.googletagmanager.com/gtm.js?id='+i+dl	spamhaus-drop	malicious-netblock
+})(window,document,'script','dataLayer','GTM-K9S544M')	spamhaus-drop	malicious-netblock
+height="0" width="0" style="display:none	spamhaus-drop	malicious-netblock
