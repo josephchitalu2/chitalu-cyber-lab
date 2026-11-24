@@ -1,4 +1,54 @@
-# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 21:28 UTC)
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 21:37 UTC)
+CVE-2026-132224	cisa-kev	kev:Optimizely
+CVE-2026-131914	cisa-kev	kev:Idunno
+CVE-2026-132165	cisa-kev	kev:Drupal
+CVE-2026-133968	cisa-kev	kev:Project MONAI
+CVE-2026-134624	cisa-kev	kev:N-able
+CVE-2026-129448	cisa-kev	kev:Apache
+CVE-2026-123890	cisa-kev	kev:Broadcom
+CVE-2025-42884	cisa-kev	kev:SAP
+CVE-2026-76466	cisa-kev	kev:Cisco
+CVE-2024-10441	cisa-kev	kev:Synology
+CVE-2026-40217	cisa-kev	kev:BerriAI
+CVE-2026-90817	cisa-kev	kev:Vanderbilt University
+CVE-2026-90436	cisa-kev	kev:Apache
+CVE-2026-115731	cisa-kev	kev:Perforce
+CVE-2026-114713	cisa-kev	kev:UnrealIRCd
+CVE-2026-123039	cisa-kev	kev:Check Point
+CVE-2026-124194	cisa-kev	kev:Microsoft
+CVE-2026-111793	cisa-kev	kev:Openwave Messaging Limited
+CVE-2026-20320	cisa-kev	kev:Cisco
+CVE-2026-111560	cisa-kev	kev:Barracuda Networks
+CVE-2026-116606	cisa-kev	kev:Barracuda Networks
+CVE-2026-125350	cisa-kev	kev:Google
+CVE-2026-102895	cisa-kev	kev:GPUStack
+CVE-2026-123158	cisa-kev	kev:OpenBSD
+CVE-2026-116779	cisa-kev	kev:SignalWire
+CVE-2026-123218	cisa-kev	kev:IBM
+CVE-2026-19868	cisa-kev	kev:SonicWall
+CVE-2024-27834	cisa-kev	kev:Apple
+CVE-2026-119977	cisa-kev	kev:WordPress
+CVE-2026-118527	cisa-kev	kev:Ivanti
+CVE-2026-111357	cisa-kev	kev:Ivanti
+CVE-2026-97229	cisa-kev	kev:GitLab
+CVE-2026-76418	cisa-kev	kev:Cisco
+CVE-2026-41709	cisa-kev	kev:Broadcom
+CVE-2026-46300	cisa-kev	kev:Linux
+CVE-2026-48356	cisa-kev	kev:Adobe
+CVE-2026-111497	cisa-kev	kev:Google
+CVE-2026-109618	cisa-kev	kev:PHP Group
+CVE-2026-109619	cisa-kev	kev:PHP Group
+CVE-2026-114625	cisa-kev	kev:Arista
+CVE-2026-110447	cisa-kev	kev:Collabora
+CVE-2026-106931	cisa-kev	kev:EG Secure Solutions
+CVE-2026-96656	cisa-kev	kev:Plex
+CVE-2026-96655	cisa-kev	kev:Plex
+CVE-2026-96654	cisa-kev	kev:Plex
+CVE-2026-96652	cisa-kev	kev:Plex
+CVE-2026-110936	cisa-kev	kev:Siemens
+CVE-2026-102764	cisa-kev	kev:BeyondTrust
+CVE-2025-61624	cisa-kev	kev:Fortinet
+CVE-2026-21589	cisa-kev	kev:Atlassian
 <!doctype html>	abuse.ch-feodo	botnet-c2-ip
 <html lang="en">	abuse.ch-feodo	botnet-c2-ip
 <head>	abuse.ch-feodo	botnet-c2-ip
@@ -149,53 +199,3 @@ drawSpamStats();	abuse.ch-feodo	botnet-c2-ip
 </a>	abuse.ch-feodo	botnet-c2-ip
 <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">	abuse.ch-feodo	botnet-c2-ip
 <span class="navbar-toggler-icon navbar-light"></span>	abuse.ch-feodo	botnet-c2-ip
-</button>	abuse.ch-feodo	botnet-c2-ip
-<div class="navbar-collapse collapse" id="collapsingNavbar">	abuse.ch-feodo	botnet-c2-ip
-<ul class="nav navbar-nav ml-auto w-100 justify-content-end">	abuse.ch-feodo	botnet-c2-ip
-<li class="nav-item">	abuse.ch-feodo	botnet-c2-ip
-<a class="nav-link" href="#about" onclick="$('#collapsingNavbar').collapse('hide');">mission</a>	abuse.ch-feodo	botnet-c2-ip
-</li>	abuse.ch-feodo	botnet-c2-ip
-<a class="nav-link" href="#platforms" onclick="$('#collapsingNavbar').collapse('hide');">platforms</a>	abuse.ch-feodo	botnet-c2-ip
-<a class="nav-link" href="#community" onclick="$('#collapsingNavbar').collapse('hide');">community</a>	abuse.ch-feodo	botnet-c2-ip
-<a class="nav-link" href="blog/" onclick="$('#collapsingNavbar').collapse('hide');">blog</a>	abuse.ch-feodo	botnet-c2-ip
-<a class="nav-link" href="#statistics" onclick="$('#collapsingNavbar').collapse('hide');">statistics</a>	abuse.ch-feodo	botnet-c2-ip
-<a class="nav-link" href="https://contact.abuse.ch/" onclick="$('#collapsingNavbar').collapse('hide');">contact</a>	abuse.ch-feodo	botnet-c2-ip
-</ul>	abuse.ch-feodo	botnet-c2-ip
-</nav>	abuse.ch-feodo	botnet-c2-ip
-<!-- Main content -->	abuse.ch-feodo	botnet-c2-ip
-<div class="jumbotron bg-img">	abuse.ch-feodo	botnet-c2-ip
-<h1 class="display-4 wh mt-5"><span class="bg-dark">FIGHTING MALWARE AND BOTNETS</span></h1>	abuse.ch-feodo	botnet-c2-ip
-<p><span class="text-light bg-dark">Independent, community-driven cyber threat intelligence.</span></p>	abuse.ch-feodo	botnet-c2-ip
-<p><a class="btn btn-primary btn-lg" href="#platforms" role="button">Our platforms &raquo;</a></p>	abuse.ch-feodo	botnet-c2-ip
-<div data-spy="scroll" data-target="#MainNavbar" data-offset="0">	abuse.ch-feodo	botnet-c2-ip
-<section id="about">	abuse.ch-feodo	botnet-c2-ip
-<div class="jumbotron jumbotron-fluid jumbotron-white mb-0 pb-0">	abuse.ch-feodo	botnet-c2-ip
-<h2 class="wh mt-4 mb-3"><span class="bg-dark">OUR MISSION</span></h2>	abuse.ch-feodo	botnet-c2-ip
-<p>Making the Internet a safer place by providing actionable, community-driven threat intelligence data.</p>	abuse.ch-feodo	botnet-c2-ip
-<p>abuse.ch has been effecting change on cybercrime for almost twenty years, owing to global recognition of our identified and tracked cyber threat signals. Supported by a community of 15,000 specialist researchers, abuse.ch’s independent intelligence is relied on by security researchers, network operators and law enforcement agencies.</p>	abuse.ch-feodo	botnet-c2-ip
-<p>Together with <a href="https://spamhaus.com/" target="_parent" title="Spamhaus Technology" rel="noopener">Spamhaus</a>, we provide the largest, independently crowdsourced intelligence of tracked malware and botnets to the industry. We develop and operate specialized platforms, built for IT security experts, to share and access relevant threat intel data.</p>	abuse.ch-feodo	botnet-c2-ip
-<p>abuse.ch is an established, trusted, and dedicated space for cyber threat intelligence experts.</p>	abuse.ch-feodo	botnet-c2-ip
-<p>Community is Central; Sharing is Caring.</p>	abuse.ch-feodo	botnet-c2-ip
-<p>Follow us on social media:</p>	abuse.ch-feodo	botnet-c2-ip
-<div class="d-flex justify-content-between mt-4 about-socials">	abuse.ch-feodo	botnet-c2-ip
-<div class="d-flex align-items-center" style="gap: 1rem">	abuse.ch-feodo	botnet-c2-ip
-<img src="/images/x.svg" alt="X logo" height="32">	abuse.ch-feodo	botnet-c2-ip
-<a href="https://x.com/abuse_ch">@abuse_ch</a>	abuse.ch-feodo	botnet-c2-ip
-<img src="/images/linkedin.svg" alt="LinkedIn logo" height="32">	abuse.ch-feodo	botnet-c2-ip
-<a href="https://linkedin.com/company/abuse-ch/">abuse.ch</a>	abuse.ch-feodo	botnet-c2-ip
-<img src="/images/mastodon.svg" alt="Mastodon logo" height="28">	abuse.ch-feodo	botnet-c2-ip
-<a href="https://ioc.exchange/@abuse_ch">@abuse_ch@ioc.exchange</a>	abuse.ch-feodo	botnet-c2-ip
-<img src="/images/bluesky.svg" alt="Bluesky logo" height="32">	abuse.ch-feodo	botnet-c2-ip
-<a href="https://bsky.app/profile/abuse-ch.bsky.social">@abuse-ch.bsky.social</a>	abuse.ch-feodo	botnet-c2-ip
-</section>	abuse.ch-feodo	botnet-c2-ip
-<section id="platforms">	abuse.ch-feodo	botnet-c2-ip
-<h2 class="wh mt-4 mb-3"><span class="bg-dark">OUR PLATFORMS</span></h2>	abuse.ch-feodo	botnet-c2-ip
-<p>abuse.ch maintains six public platforms, all supported by our partnership with Spamhaus, to aid cybersecurity researchers and practitioners in their day-to-day roles. Varying in focus areas, all platforms are designed to help identify, track, and mitigate against malware and botnet-related cyber threats.</p>	abuse.ch-feodo	botnet-c2-ip
-<p>The abuse.ch community, anti-virus vendors and threat intelligence providers can contribute and consume from the following platforms:</p>	abuse.ch-feodo	botnet-c2-ip
-<div class="row">	abuse.ch-feodo	botnet-c2-ip
-<div class="col-sm-12">	abuse.ch-feodo	botnet-c2-ip
-<a href="https://hunting.abuse.ch/" target="_blank" title="Hunting">	abuse.ch-feodo	botnet-c2-ip
-<picture>	abuse.ch-feodo	botnet-c2-ip
-<source width="100%" height="100%" class="img-responsive img-fluid img-colorify" srcset="images/hunting.webp" type="image/webp">	abuse.ch-feodo	botnet-c2-ip
-<source width="100%" height="100%" class="img-responsive img-fluid img-colorify" srcset="images/hunting.png" type="image/png">	abuse.ch-feodo	botnet-c2-ip
-<img width="100%" height="100%" class="img-responsive img-fluid img-colorify" src="images/hunting.png" alt="MalwareBazaar">	abuse.ch-feodo	botnet-c2-ip
