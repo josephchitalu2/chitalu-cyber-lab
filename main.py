@@ -25,9 +25,9 @@ if __name__ == "__main__":
         print(USAGE)
         sys.exit(1)
 
-    cmd = sys.argv
+    cmd = sys.argv[1]
     if cmd == "scan":
-        run_monitor(sys.argv if len(sys.argv) > 2 else "127.0.0.1")
+        run_monitor(sys.argv[2] if len(sys.argv) > 2 else "127.0.0.1")
     elif cmd == "sync-intel":
         conn = init_db()
         ips = fetch_spamhaus_drop(conn)
@@ -35,16 +35,16 @@ if __name__ == "__main__":
         export_ioc_snapshot(conn)
         print(f"[+] Threat Intel Updated: +{ips} Spamhaus DROP netblocks, +{cves} CVEs")
     elif cmd == "correlate":
-        correlate_logs(sys.argv if len(sys.argv) > 2 else "/var/log/auth.log")
+        correlate_logs(sys.argv[2] if len(sys.argv) > 2 else "/var/log/auth.log")
     elif cmd == "web-audit":
-        run_templates(sys.argv if len(sys.argv) > 2 else "http://127.0.0.1:8000")
+        run_templates(sys.argv[2] if len(sys.argv) > 2 else "http://127.0.0.1:8000")
     elif cmd == "tls-audit":
-        audit_tls_endpoint(sys.argv if len(sys.argv) > 2 else "example.com")
+        audit_tls_endpoint(sys.argv[2] if len(sys.argv) > 2 else "example.com")
     elif cmd == "risk-report":
         generate_risk_register()
     elif cmd == "ship-elk":
         ship_to_logstash()
     elif cmd == "cloud-audit":
-        run_cspm_audit(sys.argv if len(sys.argv) > 2 else "cspm/lab_targets")
+        run_cspm_audit(sys.argv[2] if len(sys.argv) > 2 else "cspm/lab_targets")
     else:
         print(USAGE)
