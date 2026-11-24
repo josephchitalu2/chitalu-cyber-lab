@@ -1,21 +1,4 @@
-# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 21:50 UTC)
-/*!	spamhaus-drop	malicious-netblock
-*   _____       _             __                 _____                               ______ _       _   _	spamhaus-drop	malicious-netblock
-*  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)	spamhaus-drop	malicious-netblock
-*    | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___    | |  ___ ___  _ __  ___   ______  | |__  | | __ _| |_ _  ___ ___  _ __	spamhaus-drop	malicious-netblock
-*    | | | '_ \| __/ _ \ '__|  _/ _` |/ __/ _ \   | | / __/ _ \| '_ \/ __| |______| |  __| | |/ _` | __| |/ __/ _ \| '_ \	spamhaus-drop	malicious-netblock
-*   _| |_| | | | ||  __/ |  | || (_| | (_|  __/  _| || (_| (_) | | | \__ \          | |    | | (_| | |_| | (_| (_) | | | |	spamhaus-drop	malicious-netblock
-*  |_____|_| |_|\__\___|_|  |_| \__,_|\___\___| |_____\___\___/|_| |_|___/          |_|    |_|\__,_|\__|_|\___\___/|_| |_|	spamhaus-drop	malicious-netblock
-*	spamhaus-drop	malicious-netblock
-*                         UIcons 2.4.2 - https://www.flaticon.com/uicons/interface-icons	spamhaus-drop	malicious-netblock
-*/	spamhaus-drop	malicious-netblock
-/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb	spamhaus-drop	malicious-netblock
-.ais-RatingMenu-label,.ais-RatingMenu-item--disabled .ais-RatingMenu-count{color:#c4c8d8}.ais-RatingMenu-item--selected{font-weight:700}.ais-RatingMenu-link{line-height:1.5}.ais-RatingMenu-link>*+*{margin-left:.3rem}.ais-RatingMenu-starIcon{fill:#ffc168	spamhaus-drop	malicious-netblock
-new Date().getTime(),event:'gtm.js'})	spamhaus-drop	malicious-netblock
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:''	spamhaus-drop	malicious-netblock
-'https://www.googletagmanager.com/gtm.js?id='+i+dl	spamhaus-drop	malicious-netblock
-})(window,document,'script','dataLayer','GTM-K9S544M')	spamhaus-drop	malicious-netblock
-height="0" width="0" style="display:none	spamhaus-drop	malicious-netblock
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 22:18 UTC)
 CVE-2026-132224	cisa-kev	kev:Optimizely
 CVE-2026-131914	cisa-kev	kev:Idunno
 CVE-2026-132165	cisa-kev	kev:Drupal
@@ -66,136 +49,20 @@ CVE-2026-110936	cisa-kev	kev:Siemens
 CVE-2026-102764	cisa-kev	kev:BeyondTrust
 CVE-2025-61624	cisa-kev	kev:Fortinet
 CVE-2026-21589	cisa-kev	kev:Atlassian
-<!doctype html>	abuse.ch-feodo	botnet-c2-ip
-<html lang="en">	abuse.ch-feodo	botnet-c2-ip
-<head>	abuse.ch-feodo	botnet-c2-ip
-<meta charset="utf-8">	abuse.ch-feodo	botnet-c2-ip
-<meta name="robots" content="all" />	abuse.ch-feodo	botnet-c2-ip
-<meta name="description" content="abuse.ch | Fighting malware and botnets" />	abuse.ch-feodo	botnet-c2-ip
-<meta name="keywords" content="abuse.ch, malware, botnets, security, statistic, projects, trojan, blog, infosec, cyber, threat, intelligence" />	abuse.ch-feodo	botnet-c2-ip
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">	abuse.ch-feodo	botnet-c2-ip
-<link rel="stylesheet" href="css/custom.css" type="text/css">	abuse.ch-feodo	botnet-c2-ip
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />	abuse.ch-feodo	botnet-c2-ip
-<link rel="alternate" type="application/rss+xml"  title="abuse.ch | IT-Security Blog"  href="/rss/" />	abuse.ch-feodo	botnet-c2-ip
-<title>abuse.ch | Fighting malware and botnets</title>	abuse.ch-feodo	botnet-c2-ip
-<meta name="viewport" content="width=device-width, initial-scale=1">	abuse.ch-feodo	botnet-c2-ip
-<!-- Twitter Card -->	abuse.ch-feodo	botnet-c2-ip
-<meta name="twitter:card" content="summary">	abuse.ch-feodo	botnet-c2-ip
-<meta name="twitter:title" content="abuse.ch - Figthing malware and botnets">	abuse.ch-feodo	botnet-c2-ip
-<meta name="twitter:description" content="abuse.ch is providing community driven threat intelligence on cyber threats">	abuse.ch-feodo	botnet-c2-ip
-<meta name="twitter:url" content="https://abuse.ch/">	abuse.ch-feodo	botnet-c2-ip
-<meta name="twitter:image" content="https://abuse.ch/images/abusech_twitter.png">	abuse.ch-feodo	botnet-c2-ip
-<meta name="twitter:site" content="@abuse_ch">	abuse.ch-feodo	botnet-c2-ip
-<meta name="twitter:creator" content="@abuse_ch">	abuse.ch-feodo	botnet-c2-ip
-<!--  Google Analytics -->	abuse.ch-feodo	botnet-c2-ip
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZSJ4F05DR"></script>	abuse.ch-feodo	botnet-c2-ip
-<script>	abuse.ch-feodo	botnet-c2-ip
-window.dataLayer = window.dataLayer || [];	abuse.ch-feodo	botnet-c2-ip
-function gtag(){dataLayer.push(arguments);}	abuse.ch-feodo	botnet-c2-ip
-gtag('js', new Date());	abuse.ch-feodo	botnet-c2-ip
-gtag('config', 'G-MZSJ4F05DR');	abuse.ch-feodo	botnet-c2-ip
-</script>	abuse.ch-feodo	botnet-c2-ip
-</head>	abuse.ch-feodo	botnet-c2-ip
-<body>	abuse.ch-feodo	botnet-c2-ip
-<!-- Load jquery, bootstrap and Google Charts -->	abuse.ch-feodo	botnet-c2-ip
-<script src="js/jquery-3.6.0.min.js"></script>	abuse.ch-feodo	botnet-c2-ip
-<script src="js/bootstrap.min.js"></script>	abuse.ch-feodo	botnet-c2-ip
-<script src="js/google-charts.js"></script>	abuse.ch-feodo	botnet-c2-ip
-<!-- Prepare Google charts for #statistics -->	abuse.ch-feodo	botnet-c2-ip
-window.onload = function () {	abuse.ch-feodo	botnet-c2-ip
-google.charts.load('current', {packages: ['corechart', 'line', 'bar']});	abuse.ch-feodo	botnet-c2-ip
-google.charts.setOnLoadCallback(drawSandnetChart);	abuse.ch-feodo	botnet-c2-ip
-function drawSandnetChart() {	abuse.ch-feodo	botnet-c2-ip
-var data = new google.visualization.DataTable();	abuse.ch-feodo	botnet-c2-ip
-<!-- Define colums -->	abuse.ch-feodo	botnet-c2-ip
-data.addColumn('string', 'Date');	abuse.ch-feodo	botnet-c2-ip
-data.addColumn('number', 'Number of analysed malware samples');	abuse.ch-feodo	botnet-c2-ip
-<!-- Fill columns with data -->	abuse.ch-feodo	botnet-c2-ip
-data.addRows([	abuse.ch-feodo	botnet-c2-ip
-["2026-10-25", 12130],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-26", 12630],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-27", 10129],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-28", 9068],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-29", 9387],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-30", 8464],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-31", 13229],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-01", 12278],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-02", 13791],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-03", 12813],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-04", 12698],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-05", 7319],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-06", 10865],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-07", 8466],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-08", 11368],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-09", 12361],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-10", 13082],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-11", 11728],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-12", 10514],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-13", 11033],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-14", 11970],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-15", 10332],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-16", 12392],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-17", 7791],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-18", 13637],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-19", 11238],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-20", 10400],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-21", 9320],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-22", 7209],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-23", 12276],	abuse.ch-feodo	botnet-c2-ip
-]);	abuse.ch-feodo	botnet-c2-ip
-<!-- Chart options -->	abuse.ch-feodo	botnet-c2-ip
-var options = {	abuse.ch-feodo	botnet-c2-ip
-chartArea:{top:5},	abuse.ch-feodo	botnet-c2-ip
-titleFontSize: '16',	abuse.ch-feodo	botnet-c2-ip
-vAxis: {	abuse.ch-feodo	botnet-c2-ip
-textStyle:{color: '#767676'},	abuse.ch-feodo	botnet-c2-ip
-gridlines: {	abuse.ch-feodo	botnet-c2-ip
-count: 10	abuse.ch-feodo	botnet-c2-ip
-}	abuse.ch-feodo	botnet-c2-ip
-},	abuse.ch-feodo	botnet-c2-ip
-hAxis: {	abuse.ch-feodo	botnet-c2-ip
-textStyle:{color: '#767676'}	abuse.ch-feodo	botnet-c2-ip
-legend: { position: 'bottom' },	abuse.ch-feodo	botnet-c2-ip
-colors: ['#578cb4']	abuse.ch-feodo	botnet-c2-ip
-};	abuse.ch-feodo	botnet-c2-ip
-<!-- Generate chart -->	abuse.ch-feodo	botnet-c2-ip
-var chart = new google.visualization.LineChart(document.getElementById('sandnet_samples'));	abuse.ch-feodo	botnet-c2-ip
-<!-- Draw chart -->	abuse.ch-feodo	botnet-c2-ip
-chart.draw(data, options);	abuse.ch-feodo	botnet-c2-ip
-google.charts.setOnLoadCallback(drawSpamStats);	abuse.ch-feodo	botnet-c2-ip
-function drawSpamStats() {	abuse.ch-feodo	botnet-c2-ip
-data.addColumn('number', 'Spam mails');	abuse.ch-feodo	botnet-c2-ip
-["2026-10-25", 26011],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-26", 32125],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-27", 33712],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-28", 29382],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-29", 42748],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-30", 41812],	abuse.ch-feodo	botnet-c2-ip
-["2026-10-31", 29354],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-01", 38093],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-02", 33307],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-03", 55939],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-04", 56520],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-05", 45087],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-06", 47110],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-07", 46695],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-08", 33613],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-09", 44685],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-10", 44044],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-11", 42707],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-12", 50179],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-13", 44666],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-14", 42515],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-15", 34606],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-16", 49248],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-17", 58634],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-18", 53929],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-19", 46645],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-20", 54033],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-21", 33809],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-22", 34088],	abuse.ch-feodo	botnet-c2-ip
-["2026-11-23", 49079],	abuse.ch-feodo	botnet-c2-ip
-colors: ['#b05713', '#aa0337']	abuse.ch-feodo	botnet-c2-ip
-var chart = new google.visualization.AreaChart(document.getElementById('spam_stats'));	abuse.ch-feodo	botnet-c2-ip
-window.onresize = function(event) {	abuse.ch-feodo	botnet-c2-ip
-drawSandnetChart();	abuse.ch-feodo	botnet-c2-ip
+/*!	spamhaus-drop	malicious-netblock
+*   _____       _             __                 _____                               ______ _       _   _	spamhaus-drop	malicious-netblock
+*  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)	spamhaus-drop	malicious-netblock
+*    | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___    | |  ___ ___  _ __  ___   ______  | |__  | | __ _| |_ _  ___ ___  _ __	spamhaus-drop	malicious-netblock
+*    | | | '_ \| __/ _ \ '__|  _/ _` |/ __/ _ \   | | / __/ _ \| '_ \/ __| |______| |  __| | |/ _` | __| |/ __/ _ \| '_ \	spamhaus-drop	malicious-netblock
+*   _| |_| | | | ||  __/ |  | || (_| | (_|  __/  _| || (_| (_) | | | \__ \          | |    | | (_| | |_| | (_| (_) | | | |	spamhaus-drop	malicious-netblock
+*  |_____|_| |_|\__\___|_|  |_| \__,_|\___\___| |_____\___\___/|_| |_|___/          |_|    |_|\__,_|\__|_|\___\___/|_| |_|	spamhaus-drop	malicious-netblock
+*	spamhaus-drop	malicious-netblock
+*                         UIcons 2.4.2 - https://www.flaticon.com/uicons/interface-icons	spamhaus-drop	malicious-netblock
+*/	spamhaus-drop	malicious-netblock
+/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb	spamhaus-drop	malicious-netblock
+.ais-RatingMenu-label,.ais-RatingMenu-item--disabled .ais-RatingMenu-count{color:#c4c8d8}.ais-RatingMenu-item--selected{font-weight:700}.ais-RatingMenu-link{line-height:1.5}.ais-RatingMenu-link>*+*{margin-left:.3rem}.ais-RatingMenu-starIcon{fill:#ffc168	spamhaus-drop	malicious-netblock
+new Date().getTime(),event:'gtm.js'})	spamhaus-drop	malicious-netblock
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:''	spamhaus-drop	malicious-netblock
+'https://www.googletagmanager.com/gtm.js?id='+i+dl	spamhaus-drop	malicious-netblock
+})(window,document,'script','dataLayer','GTM-K9S544M')	spamhaus-drop	malicious-netblock
+height="0" width="0" style="display:none	spamhaus-drop	malicious-netblock
