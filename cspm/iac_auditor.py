@@ -7,7 +7,6 @@ from core.database import init_db, save_cloud_finding
 AWS_KEY_PATTERN = re.compile(r"AKIA[0-9A-Z]{16}")
 
 def _parse_finding_tag(raw_finding: str, filepath: Path) -> tuple:
-    # Format: "[SEVERITY | BENCHMARK] message"
     header, _, desc = raw_finding.partition("] ")
     parts = [p.strip() for p in header.lstrip("[").split("|")]
     severity = parts[0] if len(parts) > 0 else "MEDIUM"
