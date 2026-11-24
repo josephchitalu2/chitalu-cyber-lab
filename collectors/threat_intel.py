@@ -8,45 +8,52 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from core.database import init_db
 
 FEODO_IP_URL = "https://abuse.ch"
-CISA_KEV_URL = "https://cisa.gov"
+CISA_KEV_URL = "https://githubusercontent.com"
 
 def fetch_feodo_ips(conn) -> int:
-    req = urllib.request.Request(FEODO_IP_URL, headers={"User-Agent": "ChitaluCyberLab/1.0"})
+    req = urllib.request.Request(FEODO_IP_URL, headers={"User-Agent": "Mozilla/5.0 (ChitaluCyberLab)"})
     now = datetime.now(timezone.utc).isoformat()
     added = 0
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        for raw_line in resp.read().decode("utf-8", errors="ignore").splitlines():
-            line = raw_line.strip()
-            if not line or line.startswith("#"):
-                continue
-            cur = conn.execute(
-                "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
-                (line, "abuse.ch-feodo", "botnet-c2-ip", now)
-            )
-            added += cur.rowcount
-    conn.commit()
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            for raw_line in resp.read().decode("utf-8", errors="ignore").splitlines():
+                line = raw_line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                cur = conn.execute(
+                    "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
+                    (line, "abuse.ch-feodo", "botnet-c2-ip", now)
+                )
+                added += cur.rowcount
+        conn.commit()
+    except Exception as e:
+        print(f"[!] Warning: Feodo feed fetch failed ({e})")
     return added
 
 def fetch_cisa_kev(conn) -> int:
-    req = urllib.request.Request(CISA_KEV_URL, headers={"User-Agent": "ChitaluCyberLab/1.0"})
+    req = urllib.request.Request(CISA_KEV_URL, headers={"User-Agent": "Mozilla/5.0 (ChitaluCyberLab)"})
     now = datetime.now(timezone.utc).isoformat()
     added = 0
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        payload = json.loads(resp.read().decode("utf-8"))
-        for vuln in payload.get("vulnerabilities", [])[:50]:
-            cve = vuln.get("cveID")
-            vendor = vuln.get("vendorProject", "Unknown")
-            if cve:
-                cur = conn.execute(
-                    "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
-                    (cve, "cisa-kev", f"kev:{vendor}", now)
-                )
-                added += cur.rowcount
-    conn.commit()
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+            for vuln in payload.get("vulnerabilities", [])[:50]:
+                cve = vuln.get("cveID")
+                vendor = vuln.get("vendorProject", "Unknown")
+                if cve:
+                    cur = conn.execute(
+                        "INSERT OR IGNORE INTO threat_iocs (indicator, source, category, added_at) VALUES (?, ?, ?, ?)",
+                        (cve, "cisa-kev", f"kev:{vendor}", now)
+                    )
+                    added += cur.rowcount
+        conn.commit()
+    except Exception as e:
+        print(f"[!] Warning: CISA KEV fetch failed ({e})")
     return added
 
 def export_ioc_snapshot(conn) -> None:
     out_file = Path("data/latest_iocs.txt")
+    out_file.parent.mkdir(parents=True, exist_ok=True)
     rows = conn.execute("SELECT indicator, source, category FROM threat_iocs ORDER BY added_at DESC LIMIT 200").fetchall()
     with out_file.open("w", encoding="utf-8") as f:
         f.write(f"# Chitalu Cyber Lab - Threat Intel Snapshot ({datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')})\n")

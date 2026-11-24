@@ -1,0 +1,201 @@
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 21:28 UTC)
+<!doctype html>	abuse.ch-feodo	botnet-c2-ip
+<html lang="en">	abuse.ch-feodo	botnet-c2-ip
+<head>	abuse.ch-feodo	botnet-c2-ip
+<meta charset="utf-8">	abuse.ch-feodo	botnet-c2-ip
+<meta name="robots" content="all" />	abuse.ch-feodo	botnet-c2-ip
+<meta name="description" content="abuse.ch | Fighting malware and botnets" />	abuse.ch-feodo	botnet-c2-ip
+<meta name="keywords" content="abuse.ch, malware, botnets, security, statistic, projects, trojan, blog, infosec, cyber, threat, intelligence" />	abuse.ch-feodo	botnet-c2-ip
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">	abuse.ch-feodo	botnet-c2-ip
+<link rel="stylesheet" href="css/custom.css" type="text/css">	abuse.ch-feodo	botnet-c2-ip
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />	abuse.ch-feodo	botnet-c2-ip
+<link rel="alternate" type="application/rss+xml"  title="abuse.ch | IT-Security Blog"  href="/rss/" />	abuse.ch-feodo	botnet-c2-ip
+<title>abuse.ch | Fighting malware and botnets</title>	abuse.ch-feodo	botnet-c2-ip
+<meta name="viewport" content="width=device-width, initial-scale=1">	abuse.ch-feodo	botnet-c2-ip
+<!-- Twitter Card -->	abuse.ch-feodo	botnet-c2-ip
+<meta name="twitter:card" content="summary">	abuse.ch-feodo	botnet-c2-ip
+<meta name="twitter:title" content="abuse.ch - Figthing malware and botnets">	abuse.ch-feodo	botnet-c2-ip
+<meta name="twitter:description" content="abuse.ch is providing community driven threat intelligence on cyber threats">	abuse.ch-feodo	botnet-c2-ip
+<meta name="twitter:url" content="https://abuse.ch/">	abuse.ch-feodo	botnet-c2-ip
+<meta name="twitter:image" content="https://abuse.ch/images/abusech_twitter.png">	abuse.ch-feodo	botnet-c2-ip
+<meta name="twitter:site" content="@abuse_ch">	abuse.ch-feodo	botnet-c2-ip
+<meta name="twitter:creator" content="@abuse_ch">	abuse.ch-feodo	botnet-c2-ip
+<!--  Google Analytics -->	abuse.ch-feodo	botnet-c2-ip
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZSJ4F05DR"></script>	abuse.ch-feodo	botnet-c2-ip
+<script>	abuse.ch-feodo	botnet-c2-ip
+window.dataLayer = window.dataLayer || [];	abuse.ch-feodo	botnet-c2-ip
+function gtag(){dataLayer.push(arguments);}	abuse.ch-feodo	botnet-c2-ip
+gtag('js', new Date());	abuse.ch-feodo	botnet-c2-ip
+gtag('config', 'G-MZSJ4F05DR');	abuse.ch-feodo	botnet-c2-ip
+</script>	abuse.ch-feodo	botnet-c2-ip
+</head>	abuse.ch-feodo	botnet-c2-ip
+<body>	abuse.ch-feodo	botnet-c2-ip
+<!-- Load jquery, bootstrap and Google Charts -->	abuse.ch-feodo	botnet-c2-ip
+<script src="js/jquery-3.6.0.min.js"></script>	abuse.ch-feodo	botnet-c2-ip
+<script src="js/bootstrap.min.js"></script>	abuse.ch-feodo	botnet-c2-ip
+<script src="js/google-charts.js"></script>	abuse.ch-feodo	botnet-c2-ip
+<!-- Prepare Google charts for #statistics -->	abuse.ch-feodo	botnet-c2-ip
+window.onload = function () {	abuse.ch-feodo	botnet-c2-ip
+google.charts.load('current', {packages: ['corechart', 'line', 'bar']});	abuse.ch-feodo	botnet-c2-ip
+google.charts.setOnLoadCallback(drawSandnetChart);	abuse.ch-feodo	botnet-c2-ip
+function drawSandnetChart() {	abuse.ch-feodo	botnet-c2-ip
+var data = new google.visualization.DataTable();	abuse.ch-feodo	botnet-c2-ip
+<!-- Define colums -->	abuse.ch-feodo	botnet-c2-ip
+data.addColumn('string', 'Date');	abuse.ch-feodo	botnet-c2-ip
+data.addColumn('number', 'Number of analysed malware samples');	abuse.ch-feodo	botnet-c2-ip
+<!-- Fill columns with data -->	abuse.ch-feodo	botnet-c2-ip
+data.addRows([	abuse.ch-feodo	botnet-c2-ip
+["2026-10-25", 12130],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-26", 12630],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-27", 10129],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-28", 9068],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-29", 9387],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-30", 8464],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-31", 13229],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-01", 12278],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-02", 13791],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-03", 12813],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-04", 12698],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-05", 7319],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-06", 10865],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-07", 8466],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-08", 11368],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-09", 12361],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-10", 13082],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-11", 11728],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-12", 10514],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-13", 11033],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-14", 11970],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-15", 10332],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-16", 12392],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-17", 7791],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-18", 13637],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-19", 11238],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-20", 10400],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-21", 9320],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-22", 7209],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-23", 12276],	abuse.ch-feodo	botnet-c2-ip
+]);	abuse.ch-feodo	botnet-c2-ip
+<!-- Chart options -->	abuse.ch-feodo	botnet-c2-ip
+var options = {	abuse.ch-feodo	botnet-c2-ip
+chartArea:{top:5},	abuse.ch-feodo	botnet-c2-ip
+titleFontSize: '16',	abuse.ch-feodo	botnet-c2-ip
+vAxis: {	abuse.ch-feodo	botnet-c2-ip
+textStyle:{color: '#767676'},	abuse.ch-feodo	botnet-c2-ip
+gridlines: {	abuse.ch-feodo	botnet-c2-ip
+count: 10	abuse.ch-feodo	botnet-c2-ip
+}	abuse.ch-feodo	botnet-c2-ip
+},	abuse.ch-feodo	botnet-c2-ip
+hAxis: {	abuse.ch-feodo	botnet-c2-ip
+textStyle:{color: '#767676'}	abuse.ch-feodo	botnet-c2-ip
+legend: { position: 'bottom' },	abuse.ch-feodo	botnet-c2-ip
+colors: ['#578cb4']	abuse.ch-feodo	botnet-c2-ip
+};	abuse.ch-feodo	botnet-c2-ip
+<!-- Generate chart -->	abuse.ch-feodo	botnet-c2-ip
+var chart = new google.visualization.LineChart(document.getElementById('sandnet_samples'));	abuse.ch-feodo	botnet-c2-ip
+<!-- Draw chart -->	abuse.ch-feodo	botnet-c2-ip
+chart.draw(data, options);	abuse.ch-feodo	botnet-c2-ip
+google.charts.setOnLoadCallback(drawSpamStats);	abuse.ch-feodo	botnet-c2-ip
+function drawSpamStats() {	abuse.ch-feodo	botnet-c2-ip
+data.addColumn('number', 'Spam mails');	abuse.ch-feodo	botnet-c2-ip
+["2026-10-25", 26011],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-26", 32125],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-27", 33712],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-28", 29382],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-29", 42748],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-30", 41812],	abuse.ch-feodo	botnet-c2-ip
+["2026-10-31", 29354],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-01", 38093],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-02", 33307],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-03", 55939],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-04", 56520],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-05", 45087],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-06", 47110],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-07", 46695],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-08", 33613],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-09", 44685],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-10", 44044],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-11", 42707],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-12", 50179],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-13", 44666],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-14", 42515],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-15", 34606],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-16", 49248],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-17", 58634],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-18", 53929],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-19", 46645],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-20", 54033],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-21", 33809],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-22", 34088],	abuse.ch-feodo	botnet-c2-ip
+["2026-11-23", 49079],	abuse.ch-feodo	botnet-c2-ip
+colors: ['#b05713', '#aa0337']	abuse.ch-feodo	botnet-c2-ip
+var chart = new google.visualization.AreaChart(document.getElementById('spam_stats'));	abuse.ch-feodo	botnet-c2-ip
+window.onresize = function(event) {	abuse.ch-feodo	botnet-c2-ip
+drawSandnetChart();	abuse.ch-feodo	botnet-c2-ip
+drawSpamStats();	abuse.ch-feodo	botnet-c2-ip
+<!--- Navigation -->	abuse.ch-feodo	botnet-c2-ip
+<div class="sticky-top">	abuse.ch-feodo	botnet-c2-ip
+<div class="d-flex justify-content-center align-items-center temp-banner">	abuse.ch-feodo	botnet-c2-ip
+<div class="container d-flex justify-content-center align-items-center">	abuse.ch-feodo	botnet-c2-ip
+<p style="margin-bottom: 0 !important; text-align: center">	abuse.ch-feodo	botnet-c2-ip
+🤲🏼 <strong>NEW</strong> | abuse.ch Community Hub! Earn recognition 🏅 for the malware intelligence you share, climb the leaderboards 📈, and connect with like-minded contributors who share your hunting focus 🤝. Ready to unlock your profile?	abuse.ch-feodo	botnet-c2-ip
+<a href="https://community.abuse.ch" target="_blank">Go to the Community Hub →</a>	abuse.ch-feodo	botnet-c2-ip
+</p>	abuse.ch-feodo	botnet-c2-ip
+</div>	abuse.ch-feodo	botnet-c2-ip
+<nav id="MainNavbar" class="navbar navbar-expand-lg navbar-dark">	abuse.ch-feodo	botnet-c2-ip
+<div class="container">	abuse.ch-feodo	botnet-c2-ip
+<a class="navbar-brand pr-3" href="/">	abuse.ch-feodo	botnet-c2-ip
+<img src="images/abuse-ch-stec-logo-white.svg" width="100%" height="100%" alt="abuse.ch and Spamhaus Logo">	abuse.ch-feodo	botnet-c2-ip
+</a>	abuse.ch-feodo	botnet-c2-ip
+<button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">	abuse.ch-feodo	botnet-c2-ip
+<span class="navbar-toggler-icon navbar-light"></span>	abuse.ch-feodo	botnet-c2-ip
+</button>	abuse.ch-feodo	botnet-c2-ip
+<div class="navbar-collapse collapse" id="collapsingNavbar">	abuse.ch-feodo	botnet-c2-ip
+<ul class="nav navbar-nav ml-auto w-100 justify-content-end">	abuse.ch-feodo	botnet-c2-ip
+<li class="nav-item">	abuse.ch-feodo	botnet-c2-ip
+<a class="nav-link" href="#about" onclick="$('#collapsingNavbar').collapse('hide');">mission</a>	abuse.ch-feodo	botnet-c2-ip
+</li>	abuse.ch-feodo	botnet-c2-ip
+<a class="nav-link" href="#platforms" onclick="$('#collapsingNavbar').collapse('hide');">platforms</a>	abuse.ch-feodo	botnet-c2-ip
+<a class="nav-link" href="#community" onclick="$('#collapsingNavbar').collapse('hide');">community</a>	abuse.ch-feodo	botnet-c2-ip
+<a class="nav-link" href="blog/" onclick="$('#collapsingNavbar').collapse('hide');">blog</a>	abuse.ch-feodo	botnet-c2-ip
+<a class="nav-link" href="#statistics" onclick="$('#collapsingNavbar').collapse('hide');">statistics</a>	abuse.ch-feodo	botnet-c2-ip
+<a class="nav-link" href="https://contact.abuse.ch/" onclick="$('#collapsingNavbar').collapse('hide');">contact</a>	abuse.ch-feodo	botnet-c2-ip
+</ul>	abuse.ch-feodo	botnet-c2-ip
+</nav>	abuse.ch-feodo	botnet-c2-ip
+<!-- Main content -->	abuse.ch-feodo	botnet-c2-ip
+<div class="jumbotron bg-img">	abuse.ch-feodo	botnet-c2-ip
+<h1 class="display-4 wh mt-5"><span class="bg-dark">FIGHTING MALWARE AND BOTNETS</span></h1>	abuse.ch-feodo	botnet-c2-ip
+<p><span class="text-light bg-dark">Independent, community-driven cyber threat intelligence.</span></p>	abuse.ch-feodo	botnet-c2-ip
+<p><a class="btn btn-primary btn-lg" href="#platforms" role="button">Our platforms &raquo;</a></p>	abuse.ch-feodo	botnet-c2-ip
+<div data-spy="scroll" data-target="#MainNavbar" data-offset="0">	abuse.ch-feodo	botnet-c2-ip
+<section id="about">	abuse.ch-feodo	botnet-c2-ip
+<div class="jumbotron jumbotron-fluid jumbotron-white mb-0 pb-0">	abuse.ch-feodo	botnet-c2-ip
+<h2 class="wh mt-4 mb-3"><span class="bg-dark">OUR MISSION</span></h2>	abuse.ch-feodo	botnet-c2-ip
+<p>Making the Internet a safer place by providing actionable, community-driven threat intelligence data.</p>	abuse.ch-feodo	botnet-c2-ip
+<p>abuse.ch has been effecting change on cybercrime for almost twenty years, owing to global recognition of our identified and tracked cyber threat signals. Supported by a community of 15,000 specialist researchers, abuse.ch’s independent intelligence is relied on by security researchers, network operators and law enforcement agencies.</p>	abuse.ch-feodo	botnet-c2-ip
+<p>Together with <a href="https://spamhaus.com/" target="_parent" title="Spamhaus Technology" rel="noopener">Spamhaus</a>, we provide the largest, independently crowdsourced intelligence of tracked malware and botnets to the industry. We develop and operate specialized platforms, built for IT security experts, to share and access relevant threat intel data.</p>	abuse.ch-feodo	botnet-c2-ip
+<p>abuse.ch is an established, trusted, and dedicated space for cyber threat intelligence experts.</p>	abuse.ch-feodo	botnet-c2-ip
+<p>Community is Central; Sharing is Caring.</p>	abuse.ch-feodo	botnet-c2-ip
+<p>Follow us on social media:</p>	abuse.ch-feodo	botnet-c2-ip
+<div class="d-flex justify-content-between mt-4 about-socials">	abuse.ch-feodo	botnet-c2-ip
+<div class="d-flex align-items-center" style="gap: 1rem">	abuse.ch-feodo	botnet-c2-ip
+<img src="/images/x.svg" alt="X logo" height="32">	abuse.ch-feodo	botnet-c2-ip
+<a href="https://x.com/abuse_ch">@abuse_ch</a>	abuse.ch-feodo	botnet-c2-ip
+<img src="/images/linkedin.svg" alt="LinkedIn logo" height="32">	abuse.ch-feodo	botnet-c2-ip
+<a href="https://linkedin.com/company/abuse-ch/">abuse.ch</a>	abuse.ch-feodo	botnet-c2-ip
+<img src="/images/mastodon.svg" alt="Mastodon logo" height="28">	abuse.ch-feodo	botnet-c2-ip
+<a href="https://ioc.exchange/@abuse_ch">@abuse_ch@ioc.exchange</a>	abuse.ch-feodo	botnet-c2-ip
+<img src="/images/bluesky.svg" alt="Bluesky logo" height="32">	abuse.ch-feodo	botnet-c2-ip
+<a href="https://bsky.app/profile/abuse-ch.bsky.social">@abuse-ch.bsky.social</a>	abuse.ch-feodo	botnet-c2-ip
+</section>	abuse.ch-feodo	botnet-c2-ip
+<section id="platforms">	abuse.ch-feodo	botnet-c2-ip
+<h2 class="wh mt-4 mb-3"><span class="bg-dark">OUR PLATFORMS</span></h2>	abuse.ch-feodo	botnet-c2-ip
+<p>abuse.ch maintains six public platforms, all supported by our partnership with Spamhaus, to aid cybersecurity researchers and practitioners in their day-to-day roles. Varying in focus areas, all platforms are designed to help identify, track, and mitigate against malware and botnet-related cyber threats.</p>	abuse.ch-feodo	botnet-c2-ip
+<p>The abuse.ch community, anti-virus vendors and threat intelligence providers can contribute and consume from the following platforms:</p>	abuse.ch-feodo	botnet-c2-ip
+<div class="row">	abuse.ch-feodo	botnet-c2-ip
+<div class="col-sm-12">	abuse.ch-feodo	botnet-c2-ip
+<a href="https://hunting.abuse.ch/" target="_blank" title="Hunting">	abuse.ch-feodo	botnet-c2-ip
+<picture>	abuse.ch-feodo	botnet-c2-ip
+<source width="100%" height="100%" class="img-responsive img-fluid img-colorify" srcset="images/hunting.webp" type="image/webp">	abuse.ch-feodo	botnet-c2-ip
+<source width="100%" height="100%" class="img-responsive img-fluid img-colorify" srcset="images/hunting.png" type="image/png">	abuse.ch-feodo	botnet-c2-ip
+<img width="100%" height="100%" class="img-responsive img-fluid img-colorify" src="images/hunting.png" alt="MalwareBazaar">	abuse.ch-feodo	botnet-c2-ip
