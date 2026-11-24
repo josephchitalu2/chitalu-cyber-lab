@@ -1,18 +1,18 @@
 # Chitalu Cyber Lab
 
-An automated attack-surface drift monitor and threat intelligence aggregator built in Python.
+Automated attack-surface drift monitoring, threat intelligence aggregation, and signature-based security auditing in Python.
 
-## Architecture
-- **`core/database.py`**: SQLite state engine tracking port baselines, service banners, and historical drift.
-- **`collectors/net_monitor.py`**: Multi-threaded port & banner scanner that alerts on newly exposed ports or banner changes.
-- **`collectors/threat_intel.py`**: Live feed collector ingesting **Abuse.ch Feodo Tracker** C2 IPs and **CISA KEV** vulnerabilities.
-- **`.github/workflows/sync-threat-intel.yml`**: Automated CI pipeline syncing threat feeds every 12 hours.
+## Modules
+- **State Engine (`core/database.py`)**: Tracks historical port baselines and service banners in SQLite.
+- **Drift Monitor (`collectors/net_monitor.py`)**: Flags newly exposed ports or banner changes across scans.
+- **Threat Intel (`collectors/threat_intel.py`)**: Syncs C2 blocklists and known exploited vulnerabilities via scheduled workflows.
+- **Log Correlator (`analyzers/log_correlator.py`)**: Hunts for known threat indicators inside local system logs.
+- **YAML Scanner (`analyzers/yaml_scanner.py`)**: Tests web targets against declarative YAML signatures in `templates/`.
 
-## Quick Start
+## CLI Commands
 ```bash
-# Sync live threat intelligence feeds
 python3 main.py sync-intel
-
-# Run a stateful baseline scan (run twice to see drift detection in action)
 python3 main.py scan 127.0.0.1
+python3 main.py correlate /var/log/auth.log
+python3 main.py web-audit http://127.0.0.1:8000
 ```
