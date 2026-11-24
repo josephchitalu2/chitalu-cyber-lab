@@ -1,4 +1,21 @@
-# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 21:38 UTC)
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-24 21:50 UTC)
+/*!	spamhaus-drop	malicious-netblock
+*   _____       _             __                 _____                               ______ _       _   _	spamhaus-drop	malicious-netblock
+*  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)	spamhaus-drop	malicious-netblock
+*    | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___    | |  ___ ___  _ __  ___   ______  | |__  | | __ _| |_ _  ___ ___  _ __	spamhaus-drop	malicious-netblock
+*    | | | '_ \| __/ _ \ '__|  _/ _` |/ __/ _ \   | | / __/ _ \| '_ \/ __| |______| |  __| | |/ _` | __| |/ __/ _ \| '_ \	spamhaus-drop	malicious-netblock
+*   _| |_| | | | ||  __/ |  | || (_| | (_|  __/  _| || (_| (_) | | | \__ \          | |    | | (_| | |_| | (_| (_) | | | |	spamhaus-drop	malicious-netblock
+*  |_____|_| |_|\__\___|_|  |_| \__,_|\___\___| |_____\___\___/|_| |_|___/          |_|    |_|\__,_|\__|_|\___\___/|_| |_|	spamhaus-drop	malicious-netblock
+*	spamhaus-drop	malicious-netblock
+*                         UIcons 2.4.2 - https://www.flaticon.com/uicons/interface-icons	spamhaus-drop	malicious-netblock
+*/	spamhaus-drop	malicious-netblock
+/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com*/*,:after,:before{border:0 solid #e5e7eb	spamhaus-drop	malicious-netblock
+.ais-RatingMenu-label,.ais-RatingMenu-item--disabled .ais-RatingMenu-count{color:#c4c8d8}.ais-RatingMenu-item--selected{font-weight:700}.ais-RatingMenu-link{line-height:1.5}.ais-RatingMenu-link>*+*{margin-left:.3rem}.ais-RatingMenu-starIcon{fill:#ffc168	spamhaus-drop	malicious-netblock
+new Date().getTime(),event:'gtm.js'})	spamhaus-drop	malicious-netblock
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:''	spamhaus-drop	malicious-netblock
+'https://www.googletagmanager.com/gtm.js?id='+i+dl	spamhaus-drop	malicious-netblock
+})(window,document,'script','dataLayer','GTM-K9S544M')	spamhaus-drop	malicious-netblock
+height="0" width="0" style="display:none	spamhaus-drop	malicious-netblock
 CVE-2026-132224	cisa-kev	kev:Optimizely
 CVE-2026-131914	cisa-kev	kev:Idunno
 CVE-2026-132165	cisa-kev	kev:Drupal
@@ -182,20 +199,3 @@ colors: ['#b05713', '#aa0337']	abuse.ch-feodo	botnet-c2-ip
 var chart = new google.visualization.AreaChart(document.getElementById('spam_stats'));	abuse.ch-feodo	botnet-c2-ip
 window.onresize = function(event) {	abuse.ch-feodo	botnet-c2-ip
 drawSandnetChart();	abuse.ch-feodo	botnet-c2-ip
-drawSpamStats();	abuse.ch-feodo	botnet-c2-ip
-<!--- Navigation -->	abuse.ch-feodo	botnet-c2-ip
-<div class="sticky-top">	abuse.ch-feodo	botnet-c2-ip
-<div class="d-flex justify-content-center align-items-center temp-banner">	abuse.ch-feodo	botnet-c2-ip
-<div class="container d-flex justify-content-center align-items-center">	abuse.ch-feodo	botnet-c2-ip
-<p style="margin-bottom: 0 !important; text-align: center">	abuse.ch-feodo	botnet-c2-ip
-🤲🏼 <strong>NEW</strong> | abuse.ch Community Hub! Earn recognition 🏅 for the malware intelligence you share, climb the leaderboards 📈, and connect with like-minded contributors who share your hunting focus 🤝. Ready to unlock your profile?	abuse.ch-feodo	botnet-c2-ip
-<a href="https://community.abuse.ch" target="_blank">Go to the Community Hub →</a>	abuse.ch-feodo	botnet-c2-ip
-</p>	abuse.ch-feodo	botnet-c2-ip
-</div>	abuse.ch-feodo	botnet-c2-ip
-<nav id="MainNavbar" class="navbar navbar-expand-lg navbar-dark">	abuse.ch-feodo	botnet-c2-ip
-<div class="container">	abuse.ch-feodo	botnet-c2-ip
-<a class="navbar-brand pr-3" href="/">	abuse.ch-feodo	botnet-c2-ip
-<img src="images/abuse-ch-stec-logo-white.svg" width="100%" height="100%" alt="abuse.ch and Spamhaus Logo">	abuse.ch-feodo	botnet-c2-ip
-</a>	abuse.ch-feodo	botnet-c2-ip
-<button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">	abuse.ch-feodo	botnet-c2-ip
-<span class="navbar-toggler-icon navbar-light"></span>	abuse.ch-feodo	botnet-c2-ip

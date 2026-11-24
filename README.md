@@ -16,3 +16,12 @@ python3 main.py scan 127.0.0.1
 python3 main.py correlate /var/log/auth.log
 python3 main.py web-audit http://127.0.0.1:8000
 ```
+
+## GRC & SOC Telemetry
+- **Risk Register (`risk/scorer.py`)**: Maps open ports to NIST CSF and ISO 27001 controls in `reports/RISK_REGISTER.md`.
+- **ELK Telemetry (`soc_elk/ecs_shipper.py`)**: Exports Elastic Common Schema JSON events to Logstash (`port 5044`).
+
+```bash
+python3 main.py risk-report
+python3 main.py ship-elk
+```

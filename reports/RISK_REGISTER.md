@@ -1,5 +1,5 @@
 # Automated GRC Risk Register
-**Generated:** 2026-11-24 21:47 UTC | **Active CISA KEV Context:** 50 tracked vulnerabilities
+**Generated:** 2026-11-24 21:50 UTC | **Active CISA KEV Context:** 50 tracked vulnerabilities
 
 | Risk ID | Asset (Env) | Finding | Score | Severity | SLA | NIST CSF | ISO 27001 | Remediation |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
