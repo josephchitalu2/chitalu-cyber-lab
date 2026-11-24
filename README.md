@@ -1,34 +1,25 @@
 # Chitalu Cyber Lab
 
-Automated attack-surface drift monitoring, threat intelligence aggregation, and signature-based security auditing in Python.
+A unified, zero-dependency Security Engineering platform covering Attack-Surface Management, Threat Intelligence, GRC Risk Scoring, SOC Telemetry (ELK), Cryptographic Auditing, and Cloud Security Posture Management (CSPM).
 
-## Modules
-- **State Engine (`core/database.py`)**: Tracks historical port baselines and service banners in SQLite.
-- **Drift Monitor (`collectors/net_monitor.py`)**: Flags newly exposed ports or banner changes across scans.
-- **Threat Intel (`collectors/threat_intel.py`)**: Syncs C2 blocklists and known exploited vulnerabilities via scheduled workflows.
-- **Log Correlator (`analyzers/log_correlator.py`)**: Hunts for known threat indicators inside local system logs.
-- **YAML Scanner (`analyzers/yaml_scanner.py`)**: Tests web targets against declarative YAML signatures in `templates/`.
+## Architecture
+- **`core/database.py`**: SQLite state engine tracking historical port baselines, service banners, and IoCs.
+- **`collectors/`**: Stateful port drift scanner (`net_monitor.py`) and live Spamhaus DROP / CISA KEV threat feed collector (`threat_intel.py`).
+- **`analyzers/`**: Threat-intel log correlator (`log_correlator.py`) and YAML signature web scanner (`yaml_scanner.py`).
+- **`crypto_audit/`**: TLS protocol, cipher suite, certificate expiration, and HSTS posture auditor (`tls_auditor.py`).
+- **`risk/`**: Quantitative GRC risk scoring engine (`scorer.py`) mapped to NIST CSF and ISO 27001 controls (`reports/RISK_REGISTER.md`).
+- **`soc_elk/`**: Elastic Common Schema (ECS) JSON telemetry exporter (`ecs_shipper.py`) and Dockerized ELK Stack pipeline.
+- **`cspm/`**: Static Cloud Security Posture Management auditing AWS IAM policies, Terraform (`.tf`), and Dockerfiles against CIS benchmarks.
+- **`tests/`**: Automated unit test suite verified on every push via GitHub Actions.
 
-## CLI Commands
+## CLI Usage
 ```bash
 python3 main.py sync-intel
 python3 main.py scan 127.0.0.1
 python3 main.py correlate /var/log/auth.log
 python3 main.py web-audit http://127.0.0.1:8000
-```
-
-## GRC & SOC Telemetry
-- **Risk Register (`risk/scorer.py`)**: Maps open ports to NIST CSF and ISO 27001 controls in `reports/RISK_REGISTER.md`.
-- **ELK Telemetry (`soc_elk/ecs_shipper.py`)**: Exports Elastic Common Schema JSON events to Logstash (`port 5044`).
-
-```bash
+python3 main.py tls-audit example.com
 python3 main.py risk-report
 python3 main.py ship-elk
-```
-
-## Cloud Security Posture Management (CSPM)
-- **IAM & IaC Auditor (`cspm/iac_auditor.py`, `cspm/iam_analyzer.py`)**: Audits AWS IAM JSON policies, Terraform (`.tf`), and Dockerfiles against CIS AWS/Docker benchmarks.
-
-```bash
 python3 main.py cloud-audit cspm/lab_targets
 ```

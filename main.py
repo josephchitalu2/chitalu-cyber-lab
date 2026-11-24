@@ -6,13 +6,15 @@ from analyzers.yaml_scanner import run_templates
 from risk.scorer import generate_risk_register
 from soc_elk.ecs_shipper import ship_to_logstash
 from cspm.iac_auditor import run_cspm_audit
+from crypto_audit.tls_auditor import audit_tls_endpoint
 
-USAGE = """Chitalu Cyber Lab - Attack Surface, Threat Intel, GRC, SOC & CSPM Engine
+USAGE = """Chitalu Cyber Lab - Unified Security Engineering & Posture Platform
 Usage:
   python3 main.py scan <host>          Run stateful port scan & flag baseline drift
   python3 main.py sync-intel           Pull latest Spamhaus DROP & CISA KEV feeds
   python3 main.py correlate <logfile>  Cross-reference log IPs against live threat intel
   python3 main.py web-audit <url>      Run YAML vulnerability signatures against a target URL
+  python3 main.py tls-audit <domain>   Inspect TLS protocol, cipher strength, cert expiry & HSTS
   python3 main.py risk-report          Generate GRC Risk Register mapped to NIST/ISO controls
   python3 main.py ship-elk             Export & ship ECS JSON telemetry to ELK Stack (Logstash)
   python3 main.py cloud-audit [dir]    Audit Terraform (.tf), IAM (.json) & Dockerfiles for CIS flaws
@@ -23,10 +25,9 @@ if __name__ == "__main__":
         print(USAGE)
         sys.exit(1)
 
-    cmd = sys.argv[1]
+    cmd = sys.argv
     if cmd == "scan":
-        target = sys.argv[2] if len(sys.argv) > 2 else "127.0.0.1"
-        run_monitor(target)
+        run_monitor(sys.argv if len(sys.argv) > 2 else "127.0.0.1")
     elif cmd == "sync-intel":
         conn = init_db()
         ips = fetch_spamhaus_drop(conn)
@@ -34,17 +35,16 @@ if __name__ == "__main__":
         export_ioc_snapshot(conn)
         print(f"[+] Threat Intel Updated: +{ips} Spamhaus DROP netblocks, +{cves} CVEs")
     elif cmd == "correlate":
-        logfile = sys.argv[2] if len(sys.argv) > 2 else "/var/log/auth.log"
-        correlate_logs(logfile)
+        correlate_logs(sys.argv if len(sys.argv) > 2 else "/var/log/auth.log")
     elif cmd == "web-audit":
-        url = sys.argv[2] if len(sys.argv) > 2 else "http://127.0.0.1:8000"
-        run_templates(url)
+        run_templates(sys.argv if len(sys.argv) > 2 else "http://127.0.0.1:8000")
+    elif cmd == "tls-audit":
+        audit_tls_endpoint(sys.argv if len(sys.argv) > 2 else "example.com")
     elif cmd == "risk-report":
         generate_risk_register()
     elif cmd == "ship-elk":
         ship_to_logstash()
     elif cmd == "cloud-audit":
-        target_dir = sys.argv[2] if len(sys.argv) > 2 else "cspm/lab_targets"
-        run_cspm_audit(target_dir)
+        run_cspm_audit(sys.argv if len(sys.argv) > 2 else "cspm/lab_targets")
     else:
         print(USAGE)
