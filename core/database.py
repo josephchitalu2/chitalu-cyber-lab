@@ -25,6 +25,16 @@ def init_db() -> sqlite3.Connection:
             added_at TEXT
         )
     """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS cloud_findings (
+            finding_id TEXT PRIMARY KEY,
+            resource_file TEXT,
+            severity TEXT,
+            benchmark TEXT,
+            description TEXT,
+            detected_at TEXT
+        )
+    """)
     conn.commit()
     return conn
 
@@ -53,3 +63,18 @@ def record_and_diff_port(conn: sqlite3.Connection, host: str, port: int, banner:
     if old_banner != banner:
         return f"[BANNER DRIFT] {host}:{port} changed from '{old_banner}' -> '{banner}'"
     return f"[UNCHANGED] {host}:{port} ({banner})"
+
+def save_cloud_finding(conn: sqlite3.Connection, finding_id: str, resource_file: str, severity: str, benchmark: str, description: str) -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    conn.execute(
+        """
+        INSERT INTO cloud_findings (finding_id, resource_file, severity, benchmark, description, detected_at)
+        VALUES (?, ?, ?, ?, ?, ?)
+        ON CONFLICT(finding_id) DO UPDATE SET
+            severity = excluded.severity,
+            description = excluded.description,
+            detected_at = excluded.detected_at
+        """,
+        (finding_id, resource_file, severity, benchmark, description, now)
+    )
+    conn.commit()

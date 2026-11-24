@@ -1,8 +1,19 @@
+import hashlib
 import re
 from pathlib import Path
 from cspm.iam_analyzer import audit_iam_policy
+from core.database import init_db, save_cloud_finding
 
 AWS_KEY_PATTERN = re.compile(r"AKIA[0-9A-Z]{16}")
+
+def _parse_finding_tag(raw_finding: str, filepath: Path) -> tuple:
+    # Format: "[SEVERITY | BENCHMARK] message"
+    header, _, desc = raw_finding.partition("] ")
+    parts = [p.strip() for p in header.lstrip("[").split("|")]
+    severity = parts[0] if len(parts) > 0 else "MEDIUM"
+    benchmark = parts[1] if len(parts) > 1 else "CIS Benchmark"
+    digest = hashlib.sha256(f"{filepath}:{desc}".encode("utf-8")).hexdigest()[:10]
+    return (f"CSPM-{digest.upper()}", str(filepath), severity, benchmark, desc)
 
 def audit_terraform(filepath: Path) -> list:
     findings = []
@@ -51,18 +62,25 @@ def run_cspm_audit(target_dir: str = "cspm/lab_targets") -> int:
         print(f"[-] Target path not found: {target_dir}")
         return 1
 
+    conn = init_db()
     all_findings = []
     for path in sorted(root.rglob("*")):
         if not path.is_file():
             continue
+        file_findings = []
         if path.suffix == ".tf":
-            all_findings.extend(audit_terraform(path))
+            file_findings.extend(audit_terraform(path))
         elif path.suffix == ".json":
-            all_findings.extend(audit_iam_policy(path))
+            file_findings.extend(audit_iam_policy(path))
         elif path.name == "Dockerfile" or path.name.startswith("Dockerfile."):
-            all_findings.extend(audit_dockerfile(path))
+            file_findings.extend(audit_dockerfile(path))
 
-    print(f"[*] CSPM & IaC Posture Audit completed on '{target_dir}' | Findings: {len(all_findings)}")
+        for item in file_findings:
+            all_findings.append(item)
+            fid, res_file, sev, bench, desc = _parse_finding_tag(item, path)
+            save_cloud_finding(conn, fid, res_file, sev, bench, desc)
+
+    print(f"[*] CSPM & IaC Posture Audit completed on '{target_dir}' | Findings persisted: {len(all_findings)}")
     for item in all_findings:
         print(f"  {item}")
 

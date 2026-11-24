@@ -9,15 +9,18 @@ from core.database import init_db
 from risk.scorer import load_assets, calculate_risk_score
 from risk.compliance_mapper import map_port_to_controls
 
+SEV_NUM = {"CRITICAL": 22, "HIGH": 16, "MEDIUM": 10, "LOW": 4}
+
 def build_ecs_events() -> list:
     conn = init_db()
     assets = load_assets()
     baselines = conn.execute("SELECT host, port, banner, last_seen FROM port_baselines").fetchall()
+    cloud_rows = conn.execute("SELECT finding_id, resource_file, severity, benchmark, description FROM cloud_findings").fetchall()
     kev_count = conn.execute("SELECT COUNT(*) FROM threat_iocs WHERE source = 'cisa-kev'").fetchone()[0]
     now = datetime.now(timezone.utc).isoformat()
 
     events = []
-    for host, port, banner, last_seen in baselines:
+    for host, port, banner, _ in baselines:
         meta = assets.get(host, {"name": host, "environment": "unclassified", "criticality": 3, "owner": "Unassigned"})
         score, severity, sla = calculate_risk_score(port, meta["criticality"], kev_count)
         title, nist, iso, fix = map_port_to_controls(port)
@@ -36,6 +39,24 @@ def build_ecs_events() -> list:
             "service": {"name": title, "state": banner},
             "compliance": {"nist_csf": nist, "iso_27001": iso, "sla": sla, "remediation": fix},
         })
+
+    for fid, res_file, severity, benchmark, desc in cloud_rows:
+        num_sev = SEV_NUM.get(severity, 10)
+        events.append({
+            "@timestamp": now,
+            "ecs": {"version": "8.11.0"},
+            "event": {
+                "id": fid,
+                "kind": "alert",
+                "category": ["configuration", "cloud"],
+                "severity": num_sev,
+                "risk_score": num_sev * 4,
+            },
+            "file": {"path": res_file},
+            "rule": {"id": benchmark, "description": desc},
+            "cloud": {"provider": "aws", "service": {"name": "cspm-iac-auditor"}},
+        })
+
     return events
 
 def ship_to_logstash(logstash_host: str = "127.0.0.1", logstash_port: int = 5044) -> None:
@@ -46,7 +67,7 @@ def ship_to_logstash(logstash_host: str = "127.0.0.1", logstash_port: int = 5044
         for ev in events:
             f.write(json.dumps(ev) + "\n")
 
-    print(f"[+] Exported {len(events)} Elastic Common Schema (ECS) events to {out_ndjson}")
+    print(f"[+] Exported {len(events)} Elastic Common Schema (ECS) events (Network + Cloud) to {out_ndjson}")
 
     try:
         with socket.create_connection((logstash_host, logstash_port), timeout=3.0) as sock:
