@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One run per branch; a newer push cancels the older run.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # Job names are what branch protection requires. Do not rename without
+  # updating scripts/setup-repo.sh.
+  secrets-scan:
+    name: secrets-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  checks:
+    name: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+      - name: Install Python dependencies (if the project has any)
+        run: |
+          find . -name 'requirements*.txt' -not -path './venv/*' -not -path '*/node_modules/*' -print0 |
+            while IFS= read -r -d '' f; do
+              echo "Installing $f"
+              pip install -r "$f"
+            done
+      - name: Project checks (same script you run locally)
+        run: ./scripts/check.sh
