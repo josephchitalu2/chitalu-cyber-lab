@@ -23,3 +23,14 @@ python3 main.py risk-report
 python3 main.py ship-elk
 python3 main.py cloud-audit cspm/lab_targets
 ```
+
+### Live AWS / LocalStack API Auditing
+```bash
+# Start emulated AWS APIs locally (S3, IAM, EC2)
+docker compose -f cspm/docker-compose.localstack.yml up -d
+
+# Run live API posture audit & update Risk Register / ELK telemetry
+python3 main.py aws-live-audit
+python3 main.py risk-report
+python3 main.py ship-elk
+```

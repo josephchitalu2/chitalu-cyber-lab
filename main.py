@@ -6,6 +6,7 @@ from analyzers.yaml_scanner import run_templates
 from risk.scorer import generate_risk_register
 from soc_elk.ecs_shipper import ship_to_logstash
 from cspm.iac_auditor import run_cspm_audit
+from cspm.localstack_probe import audit_live_aws
 from crypto_audit.tls_auditor import audit_tls_endpoint
 
 USAGE = """Chitalu Cyber Lab - Unified Security Engineering & Posture Platform
@@ -18,6 +19,7 @@ Usage:
   python3 main.py risk-report          Generate GRC Risk Register mapped to NIST/ISO controls
   python3 main.py ship-elk             Export & ship ECS JSON telemetry to ELK Stack (Logstash)
   python3 main.py cloud-audit [dir]    Audit Terraform (.tf), IAM (.json) & Dockerfiles for CIS flaws
+  python3 main.py aws-live-audit       Audit live AWS / LocalStack S3, IAM & EC2 APIs via boto3
 """
 
 if __name__ == "__main__":
@@ -46,5 +48,7 @@ if __name__ == "__main__":
         ship_to_logstash()
     elif cmd == "cloud-audit":
         run_cspm_audit(sys.argv[2] if len(sys.argv) > 2 else "cspm/lab_targets")
+    elif cmd == "aws-live-audit":
+        audit_live_aws()
     else:
         print(USAGE)
