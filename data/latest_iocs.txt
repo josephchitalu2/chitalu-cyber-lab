@@ -1,4 +1,14 @@
-# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-25 07:41 UTC)
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-25 21:22 UTC)
+CVE-2026-103406	cisa-kev	kev:Hewlett Packard Enterprise (HPE)
+CVE-2026-133469	cisa-kev	kev:Vates
+CVE-2025-41450	cisa-kev	kev:Danfoss
+CVE-2023-25914	cisa-kev	kev:Danfoss
+CVE-2023-25915	cisa-kev	kev:Danfoss
+CVE-2026-133324	cisa-kev	kev:Mitel
+CVE-2026-133275	cisa-kev	kev:Mitel
+CVE-2026-133311	cisa-kev	kev:Mitel
+CVE-2026-133303	cisa-kev	kev:Mitel
+CVE-2026-133323	cisa-kev	kev:Mitel
 CVE-2026-132224	cisa-kev	kev:Optimizely
 CVE-2026-131914	cisa-kev	kev:Idunno
 CVE-2026-132165	cisa-kev	kev:Drupal
@@ -39,16 +49,6 @@ CVE-2026-111497	cisa-kev	kev:Google
 CVE-2026-109618	cisa-kev	kev:PHP Group
 CVE-2026-109619	cisa-kev	kev:PHP Group
 CVE-2026-114625	cisa-kev	kev:Arista
-CVE-2026-110447	cisa-kev	kev:Collabora
-CVE-2026-106931	cisa-kev	kev:EG Secure Solutions
-CVE-2026-96656	cisa-kev	kev:Plex
-CVE-2026-96655	cisa-kev	kev:Plex
-CVE-2026-96654	cisa-kev	kev:Plex
-CVE-2026-96652	cisa-kev	kev:Plex
-CVE-2026-110936	cisa-kev	kev:Siemens
-CVE-2026-102764	cisa-kev	kev:BeyondTrust
-CVE-2025-61624	cisa-kev	kev:Fortinet
-CVE-2026-21589	cisa-kev	kev:Atlassian
 /*!	spamhaus-drop	malicious-netblock
 *   _____       _             __                 _____                               ______ _       _   _	spamhaus-drop	malicious-netblock
 *  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)	spamhaus-drop	malicious-netblock
