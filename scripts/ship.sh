@@ -124,7 +124,7 @@ count=$(git rev-list --count "$range")
 
 echo
 say "going out: $last -> $next ($count commits)"
-git log --oneline --no-decorate "$range" | head -n 20
+(git log --oneline --no-decorate "$range" || true) | head -n 20
 [ "$count" -le 20 ] || echo "  ... and $((count - 20)) more"
 echo
 open_prs=$(gh pr list --state open --json number --jq 'length' 2>/dev/null || echo "?")
