@@ -1,4 +1,4 @@
-# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-26 21:08 UTC)
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-27 07:30 UTC)
 CVE-2026-103406	cisa-kev	kev:Hewlett Packard Enterprise (HPE)
 CVE-2026-133469	cisa-kev	kev:Vates
 CVE-2025-41450	cisa-kev	kev:Danfoss
