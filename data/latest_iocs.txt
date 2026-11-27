@@ -1,4 +1,7 @@
-# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-27 07:30 UTC)
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-27 20:52 UTC)
+CVE-2026-120705	cisa-kev	kev:OSGeo
+CVE-2026-129243	cisa-kev	kev:OSGeo
+CVE-2026-136716	cisa-kev	kev:Drupal
 CVE-2026-103406	cisa-kev	kev:Hewlett Packard Enterprise (HPE)
 CVE-2026-133469	cisa-kev	kev:Vates
 CVE-2025-41450	cisa-kev	kev:Danfoss
@@ -46,9 +49,6 @@ CVE-2026-41709	cisa-kev	kev:Broadcom
 CVE-2026-46300	cisa-kev	kev:Linux
 CVE-2026-48356	cisa-kev	kev:Adobe
 CVE-2026-111497	cisa-kev	kev:Google
-CVE-2026-109618	cisa-kev	kev:PHP Group
-CVE-2026-109619	cisa-kev	kev:PHP Group
-CVE-2026-114625	cisa-kev	kev:Arista
 /*!	spamhaus-drop	malicious-netblock
 *   _____       _             __                 _____                               ______ _       _   _	spamhaus-drop	malicious-netblock
 *  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)	spamhaus-drop	malicious-netblock

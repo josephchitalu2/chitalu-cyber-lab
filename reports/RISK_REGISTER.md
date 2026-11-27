@@ -1,5 +1,5 @@
 # Automated GRC Risk Register (Network + Cloud Posture)
-**Generated:** 2026-11-27 07:30 UTC | **Active CISA KEV Context:** 50 tracked vulnerabilities
+**Generated:** 2026-11-27 20:52 UTC | **Active CISA KEV Context:** 50 tracked vulnerabilities
 
 | Risk ID | Asset / Resource | Finding | Score | Severity | SLA | NIST CSF | ISO 27001 | Remediation |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
