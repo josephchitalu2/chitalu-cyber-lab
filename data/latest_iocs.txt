@@ -1,4 +1,4 @@
-# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-27 20:52 UTC)
+# Chitalu Cyber Lab - Threat Intel Snapshot (2026-11-28 06:58 UTC)
 CVE-2026-120705	cisa-kev	kev:OSGeo
 CVE-2026-129243	cisa-kev	kev:OSGeo
 CVE-2026-136716	cisa-kev	kev:Drupal
